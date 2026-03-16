@@ -31,11 +31,18 @@ export function ContactForm() {
           ) : (
             <>
               <h2 className="text-2xl font-bold text-text-headline mb-2 text-center">{t('form.headline')}</h2>
-              <p className="text-sm text-text-body text-center mb-4">{t('form.description')}</p>
-              
-              <div className="flex justify-center mb-6">
+              <p className="text-sm text-text-body text-center mb-3">{t('form.description')}</p>
+
+              <p className="text-xs text-accent font-medium text-center mb-4">
+                {t('form.urgency')}
+              </p>
+
+              <div className="flex flex-col items-center gap-2 mb-6">
                 <span className="inline-flex items-center gap-1 bg-accent/10 text-accent font-mono-data text-sm font-semibold px-4 py-2 rounded-full">
                   {t('form.spotsCount')} {t('form.spotsLeft')}
+                </span>
+                <span className="text-xs font-semibold text-text-headline">
+                  {t('form.deadline')}
                 </span>
               </div>
 
