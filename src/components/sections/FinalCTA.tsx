@@ -9,7 +9,8 @@ export function FinalCTA() {
       <div className="container mx-auto max-w-3xl text-center">
         <h2 className="text-3xl md:text-4xl font-bold mb-4">{t('finalCta.headline')}</h2>
         <p className="text-base opacity-90 mb-4 max-w-2xl mx-auto">{t('finalCta.description')}</p>
-        <p className="text-sm font-mono-data opacity-70 mb-8">{t('finalCta.scarcity')}</p>
+        <p className="text-sm font-mono-data opacity-70 mb-2">{t('finalCta.scarcity')}</p>
+        <p className="text-sm font-semibold text-accent mb-8">{t('finalCta.urgency')}</p>
         <Button
           onClick={scrollToForm}
           size="lg"

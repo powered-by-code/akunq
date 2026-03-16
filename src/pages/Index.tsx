@@ -1,4 +1,5 @@
 import { Navbar } from '@/components/sections/Navbar';
+import { UrgencyBar } from '@/components/sections/UrgencyBar';
 import { Hero } from '@/components/sections/Hero';
 import { ProblemSection } from '@/components/sections/ProblemSection';
 import { SystemSection } from '@/components/sections/SystemSection';
@@ -18,6 +19,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
+      <UrgencyBar />
       <Hero />
       <ProblemSection />
       <SystemSection />
