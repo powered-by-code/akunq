@@ -4,11 +4,12 @@
     "ctaButton": "Reserve a Spot"
   },
   "hero": {
-    "headline": "A 30-Day Protocol That Gets Your Mom To Lose 7kg",
-    "subheadline": "You handle the signup. We handle everything else. She comes back healthier.",
-    "description": "2-week immersive camp in Stepanavan + 2-week guided home phase. Dietitian. Food psychologist. Daily tracking. Full accountability system. Triple guarantee.",
+    "headline": "7kg Gone in 30 Days. Guaranteed.",
+    "subheadline": "A done-for-you transformation protocol for your mom — dietitian, food psychologist, daily tracking, and a system that works even after she goes home.",
+    "description": "2-week immersive camp in Stepanavan + 2-week guided home phase. Full accountability system. Double guarantee.",
     "ctaButton": "Reserve a Spot",
-    "trustLine": "Only 4 spots per cohort · Pre-program medical screening · 3 guarantees included"
+    "trustLine": "Only 4 spots per cohort · Pre-program medical screening · Double guarantee included",
+    "urgency": "Next cohort starts July 14, 2026"
   },
   "problem": {
     "sectionTag": "The Problem",
