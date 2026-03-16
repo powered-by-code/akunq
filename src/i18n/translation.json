@@ -1,0 +1,355 @@
+{
+  "nav": {
+    "brandName": "StepReset",
+    "ctaButton": "Reserve a Spot"
+  },
+  "hero": {
+    "headline": "A 30-Day Protocol That Gets Your Mom To Lose 7kg",
+    "subheadline": "You handle the signup. We handle everything else. She comes back healthier.",
+    "description": "2-week immersive camp in Stepanavan + 2-week guided home phase. Dietitian. Food psychologist. Daily tracking. Full accountability system. Triple guarantee.",
+    "ctaButton": "Reserve a Spot",
+    "trustLine": "Only 4 spots per cohort · Pre-program medical screening · 3 guarantees included"
+  },
+  "problem": {
+    "sectionTag": "The Problem",
+    "headline": "You Already Know Her Health Is Getting Worse",
+    "paragraph1": "You've tried talking to her. You've sent her articles. You've suggested walking. She says 'yes balas' and nothing changes. It's not a motivation problem — it's an environment problem. Her daily routine, her kitchen, her habits — everything around her reinforces the same patterns.",
+    "paragraph2": "You can't fix this with advice. She needs a controlled environment, professional guidance, and a system that continues working when she goes home. That's what we built.",
+    "situations": [
+      {
+        "icon": "activity",
+        "text": "Blood pressure, blood sugar, or weight trending in the wrong direction"
+      },
+      {
+        "icon": "utensils",
+        "text": "Same diet for 20 years — nothing you say changes it"
+      },
+      {
+        "icon": "shield-off",
+        "text": "She won't invest in herself — classic Armenian mom guilt"
+      },
+      {
+        "icon": "rotate-ccw",
+        "text": "Past diets failed because there was no system, just willpower"
+      }
+    ]
+  },
+  "system": {
+    "sectionTag": "The System",
+    "headline": "How the Protocol Works",
+    "intro": "This isn't a wellness vacation. It's a structured 30-day system with two phases, daily data collection, and continuous professional oversight. Maximum 4 participants per cohort — everyone gets direct attention.",
+    "phases": [
+      {
+        "name": "Phase 1: Camp (Days 1-14)",
+        "location": "Stepanavan",
+        "description": "Controlled environment. All meals prepared by our team — zero carbs, Armenian-friendly food she'll actually enjoy. Daily yoga. Nature walks (7-10K steps/day). 1-on-1 sessions with a food psychologist to rewire her relationship with eating. Cooking workshops so she learns to replicate meals at home. She builds friendships with 3 other women her age going through the same thing.",
+        "keyMetrics": "Daily weigh-ins · Step tracking · Meal logging · Psychology sessions logged"
+      },
+      {
+        "name": "Phase 2: Home (Days 15-30)",
+        "location": "Yerevan / Home",
+        "description": "She goes home with printed meal plans, grocery lists, and recipes. But she's not on her own. Every meal is photographed and posted to the group chat BEFORE she eats — our dietitian reviews in real time. Step count screenshot posted daily by 9pm. Weekly video check-in with the full cohort. Her buddy from camp texts her daily. If she misses a check-in, we notice within hours.",
+        "keyMetrics": "Meal photos reviewed daily · Step count verified · Weekly weigh-in on camera · Buddy check-ins logged"
+      }
+    ],
+    "reporting": {
+      "headline": "You Get Weekly Reports",
+      "description": "Every week you receive a progress update: weight trend, step count totals, meal compliance rate, and dietitian notes. You'll know exactly how she's doing without having to ask."
+    }
+  },
+  "story": {
+    "sectionTag": "Why This Exists",
+    "headline": "Built By Someone Who Needed It First",
+    "paragraph1": "I lost 20kg using this methodology. Not through willpower or a crash diet — through understanding why I was eating wrong and systematically changing it. Food psychology + structured nutrition + daily accountability.",
+    "paragraph2": "After keeping the weight off, I put together a team — a licensed dietitian and a food psychologist — to package this into a repeatable program. The camp in Stepanavan is the delivery mechanism. The system is what produces the result.",
+    "boldStatement": "I'm not a fitness influencer. I'm someone who solved this problem for myself and built a team to solve it for others.",
+    "photoCaption": "Personal result: -20kg"
+  },
+  "howItWorks": {
+    "sectionTag": "For You",
+    "headline": "What You Actually Have To Do",
+    "steps": [
+      {
+        "number": "1",
+        "title": "Leave Your Info",
+        "description": "Fill in your name and phone number. We'll call you within 24 hours to answer questions, confirm dates, and walk you through everything."
+      },
+      {
+        "number": "2",
+        "title": "Get Her There",
+        "description": "Use our 'How to gift this to your mom' script — it handles the guilt objection. We handle travel logistics and pre-program medical screening."
+      },
+      {
+        "number": "3",
+        "title": "Monitor Progress",
+        "description": "Weekly reports delivered to you. Real-time visibility into her steps, meals, and weight trend. You don't have to do anything — just watch it work."
+      }
+    ],
+    "bottomLine": "Your total time investment: ~30 minutes. One form, one conversation with your mom. We handle the other 29 days and 23.5 hours."
+  },
+  "forMom": {
+    "sectionTag": "Show This To Your Mom",
+    "headline": "Մամա, Սա Քեզ Համար Է",
+    "headlineTranslation": "Mom, This Is For You",
+    "intro": "This section is written for her. Screenshot it. Send it on WhatsApp. Or just hand her your phone.",
+    "letter": "Dear Mom,\n\nThis isn't a diet. This isn't a gym. This is 2 weeks in beautiful Stepanavan with 3 other women your age, eating delicious food that happens to be healthy, walking in nature, doing gentle yoga, and learning from professionals who will help you understand your body.\n\nYou'll have a food psychologist to talk to. A dietitian who plans every meal. Cooking workshops where you'll learn recipes your whole family will love. And you'll make new friends — women just like you, going through the same experience.\n\nThere's a spa day. There are sightseeing trips. There's mountain air and no kitchen to clean.\n\nWhen you come home, you won't be alone. You'll have a buddy from camp who texts you every day. A group chat full of women cheering you on. And a meal plan stuck to your fridge.\n\nYou've spent 30 years taking care of everyone else.\n\nLet someone take care of you for 30 days.\n\nAll you have to do is show up.",
+    "highlights": [
+      {
+        "icon": "mountain",
+        "text": "2 weeks in Stepanavan — fresh air, nature walks, mountain views"
+      },
+      {
+        "icon": "chef-hat",
+        "text": "3 delicious meals a day — Armenian food you'll love, prepared for you"
+      },
+      {
+        "icon": "users",
+        "text": "Only 4 women per group — personal attention, real friendships"
+      },
+      {
+        "icon": "heart",
+        "text": "Yoga, spa day, sightseeing — this is rest, not boot camp"
+      },
+      {
+        "icon": "phone",
+        "text": "After camp — daily support, buddy system, free yoga classes in Yerevan"
+      }
+    ],
+    "closingLine": "Your child already paid for this because they love you. All you have to do is say yes."
+  },
+  "valueStack": {
+    "sectionTag": "What's Included",
+    "headline": "Full Breakdown of What She Gets",
+    "bundles": [
+      {
+        "name": "The Stepanavan Reset",
+        "description": "14 nights accommodation. 3 low-carb meals daily. Daily guided walks. Cooking workshops.",
+        "value": "֏400,000"
+      },
+      {
+        "name": "Food Freedom — Nutrition System",
+        "description": "1-on-1 dietitian orientation. 30-day meal plan. Weekly grocery lists. Family-friendly recipe collection.",
+        "value": "֏150,000"
+      },
+      {
+        "name": "Mind Over Meals — Food Psychology",
+        "description": "1-on-1 food psychology session. Group workshops. Understanding why past diets failed.",
+        "value": "֏200,000"
+      },
+      {
+        "name": "Never Walk Alone — Accountability System",
+        "description": "Buddy matching. Daily group chat with dietitian. Weekly video check-ins. Lifetime alumni community.",
+        "value": "֏150,000"
+      },
+      {
+        "name": "Yerevan Walking Blueprint",
+        "description": "Printed route maps for Yerevan. Distance, safety, seasonal alternatives. Solves the 'nowhere to walk' problem.",
+        "value": "֏50,000"
+      },
+      {
+        "name": "Peace of Mind Package",
+        "description": "Medical screening. Weekly progress reports to you. Gift messaging guide. Triple guarantee.",
+        "value": "֏100,000"
+      },
+      {
+        "name": "Life After 30 Days",
+        "description": "Maintenance guide. Holiday and gathering protocols. Slip-up recovery system.",
+        "value": "֏100,000"
+      }
+    ],
+    "bundlesTotal": "Core program: ֏1,150,000 value",
+    "bonusHeadline": "Included Bonuses",
+    "bonuses": [
+      {
+        "name": "Blood Panel — Before & After",
+        "description": "Full blood work at a partner lab. Cholesterol, blood sugar, inflammation markers. Measurable proof.",
+        "value": "֏80,000"
+      },
+      {
+        "name": "Spa Day",
+        "description": "One full day of pampering. Massage, relaxation, guided meditation.",
+        "value": "֏100,000"
+      },
+      {
+        "name": "Armenian Family Cookbook",
+        "description": "30 low-carb Armenian recipes. Tolma, khorovats, soups. Adapted comfort food the whole family eats.",
+        "value": "֏50,000"
+      },
+      {
+        "name": "Progress Dashboard",
+        "description": "Daily tracking sent to you. Steps, weight, meal compliance. You see everything.",
+        "value": "֏50,000"
+      },
+      {
+        "name": "Alumni Refresher Discount",
+        "description": "50% off a future 1-week refresher camp within 12 months.",
+        "value": "֏75,000"
+      },
+      {
+        "name": "Stepanavan Local Pack",
+        "description": "Mountain honey, herbal tea, artisan gifts from local producers.",
+        "value": "֏40,000"
+      },
+      {
+        "name": "Daily Yoga Program",
+        "description": "Beginner-friendly morning yoga sessions during the 2-week camp.",
+        "value": "֏80,000"
+      },
+      {
+        "name": "2 Guided Excursions",
+        "description": "Walking-based sightseeing in the Stepanavan region. Steps + memories.",
+        "value": "֏60,000"
+      },
+      {
+        "name": "2 Weeks Free Yoga in Yerevan",
+        "description": "Post-program yoga at a partner studio. Keeps momentum going after day 30.",
+        "value": "֏60,000"
+      }
+    ],
+    "bonusTotal": "Bonuses: ֏595,000 value",
+    "grandTotal": "Total value: ֏1,745,000",
+    "price": "֏600,000",
+    "priceContext": "Less than ֏20,000/day for a full team of professionals, accommodation, meals, and a system that produces measurable results.",
+    "ctaButton": "Reserve a Spot"
+  },
+  "guarantee": {
+    "sectionTag": "Risk Reversal",
+    "headline": "Three Guarantees. Your Risk Is Near Zero.",
+    "guarantees": [
+      {
+        "name": "5-Day Try-It Guarantee",
+        "type": "84% Refund",
+        "description": "She arrives and starts the program. If within 5 days she feels it's not for her — she goes home and you get 84% of your money back. We keep 16% to cover the accommodation and meals for those 5 days. Fair for everyone."
+      },
+      {
+        "name": "7kg Or We Keep Working",
+        "type": "Conditional",
+        "description": "She completes the 30-day protocol, posts every check-in, follows the meal plan — and doesn't lose 7kg? We continue coaching her for free until she hits it. Conditions: full protocol compliance."
+      },
+      {
+        "name": "The Mom Test",
+        "type": "Unconditional",
+        "description": "If after 30 days your mom hasn't told you this was the best gift you've ever given her — full refund. We're betting our revenue on how good this experience is. That's how confident we are."
+      }
+    ],
+    "summary": "5-day 84% refund if she doesn't like it. 7kg or free continuation. Mom doesn't love it — full money back. Your downside is capped. Our confidence isn't."
+  },
+  "results": {
+    "sectionTag": "Expected Outcomes",
+    "headline": "What The Data Should Show After 30 Days",
+    "note": "Based on the protocol design and founder's personal results. Clinical cohort data coming after first group completes.",
+    "metrics": [
+      {
+        "metric": "Weight Loss",
+        "target": "5-9kg",
+        "detail": "Guaranteed minimum 7kg with full compliance"
+      },
+      {
+        "metric": "Daily Steps",
+        "target": "7,000-10,000",
+        "detail": "Tracked and verified daily"
+      },
+      {
+        "metric": "Blood Panel",
+        "target": "Measurable improvement",
+        "detail": "Before/after comparison provided"
+      },
+      {
+        "metric": "New Recipes Learned",
+        "target": "15-20",
+        "detail": "Hands-on cooking workshops during camp"
+      },
+      {
+        "metric": "Post-Program Support",
+        "target": "Ongoing",
+        "detail": "Alumni community + free yoga in Yerevan"
+      }
+    ]
+  },
+  "testimonials": {
+    "sectionTag": "Results",
+    "headline": "Cohort Results",
+    "comingSoon": "First cohort is forming now. Measurable results — weight, blood work, compliance rates — will be published here after completion.",
+    "placeholder": "We will publish: average kg lost, blood panel improvements, completion rate, and video testimonials from both participants and the developers who gifted the program.",
+    "items": []
+  },
+  "faq": {
+    "sectionTag": "FAQ",
+    "headline": "Common Questions",
+    "items": [
+      {
+        "question": "What if she has health issues or takes medication?",
+        "answer": "Pre-program medical screening is mandatory. Our dietitian reviews all medications and conditions. If something makes the program unsafe for her, we reject the application and refund you. Health first, always."
+      },
+      {
+        "question": "She's going to say 'don't waste your money on me.'",
+        "answer": "We know. That's why we created a script for this exact conversation. It reframes the gift as a health investment — one hospital stay for blood pressure or diabetes costs more than this entire program. We'll send you the exact words to use."
+      },
+      {
+        "question": "How do I know she won't cheat on the diet at home?",
+        "answer": "Every meal is photographed and posted BEFORE eating. Our dietitian reviews in real time. Step counts are verified daily. Weekly video weigh-ins with the whole group. A buddy from camp texting her daily. And you get a weekly compliance report. The system has more monitoring than most production environments."
+      },
+      {
+        "question": "What does she eat? She's picky.",
+        "answer": "Armenian food — tolma, khorovats, soups, stews — adapted to be low-carb. Not salads and protein shakes. Real food she already likes, prepared differently. She learns to cook it herself during camp workshops."
+      },
+      {
+        "question": "Will she gain it back?",
+        "answer": "The food psychology component exists specifically to prevent this. She's not white-knuckling through a diet — she's changing how she understands food. Plus: maintenance blueprint, alumni community, and 2 weeks of free yoga in Yerevan to bridge the gap."
+      },
+      {
+        "question": "What if the other women are younger or fitter?",
+        "answer": "Cohorts are matched by age and fitness level. Only 4 women per group, all in similar life stages — typically age 45-60, similar starting point. The exercise is walking, not CrossFit. She'll be with peers."
+      },
+      {
+        "question": "Is Stepanavan safe?",
+        "answer": "Medical screening before arrival. On-call health protocols during camp. Stepanavan has medical facilities nearby. You receive daily updates on her status."
+      },
+      {
+        "question": "Can I pay in installments?",
+        "answer": "Yes. Contact us to set up a payment plan."
+      },
+      {
+        "question": "Only 4 people? When's the next cohort?",
+        "answer": "We run small cohorts intentionally — 4 women maximum so everyone gets direct 1-on-1 time with the dietitian and psychologist. Spots fill fast. Leave your info and we'll tell you the next available date."
+      },
+      {
+        "question": "Why 84% refund and not 100% for the 5-day guarantee?",
+        "answer": "Because we've already spent real money housing and feeding her for those 5 days. The 16% covers actual costs incurred. We think that's fair — you're not paying for a service that didn't work, you're covering meals and a bed she used. The other two guarantees are full refunds."
+      },
+      {
+        "question": "What's the time commitment for me?",
+        "answer": "About 30 minutes total. One form, one phone call with us, one conversation with your mom. After that, you just read weekly reports. We handle everything else."
+      }
+    ],
+    "ctaButton": "Reserve a Spot"
+  },
+  "form": {
+    "headline": "Reserve a Spot",
+    "description": "Leave your name and number. We'll call you within 24 hours to answer your questions and walk you through the next steps.",
+    "nameLabel": "Your Name",
+    "namePlaceholder": "e.g. Armen",
+    "phoneLabel": "Phone Number",
+    "phonePlaceholder": "+374 XX XXX XXX",
+    "submitButton": "Call Me",
+    "disclaimer": "We'll call once. No spam. No automated messages.",
+    "spotsLeft": "spots left in the next cohort",
+    "spotsCount": "4"
+  },
+  "finalCta": {
+    "headline": "She Took Care of You for 30 Years. This Takes 30 Days.",
+    "description": "Professional team. Proven system. Triple guarantee. You'll get weekly proof it's working.",
+    "scarcity": "4 spots per cohort · Next cohort forming now",
+    "ctaButton": "Reserve a Spot",
+    "reassurance": "84% refund in first 5 days · Medical screening included · Installments available"
+  },
+  "footer": {
+    "brandName": "StepReset",
+    "tagline": "30-day transformation protocol. Stepanavan, Armenia.",
+    "contact": "Questions?",
+    "email": "hello@stepreset.am",
+    "phone": "+374 XX XXX XXX",
+    "copyright": "© 2026 StepReset. All rights reserved.",
+    "location": "Stepanavan, Armenia"
+  }
+}
