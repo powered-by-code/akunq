@@ -1,4 +1,5 @@
 import { Navbar } from '@/components/sections/Navbar';
+import { UrgencyBar } from '@/components/sections/UrgencyBar';
 import { Hero } from '@/components/sections/Hero';
 import { ProblemSection } from '@/components/sections/ProblemSection';
 import { SystemSection } from '@/components/sections/SystemSection';
