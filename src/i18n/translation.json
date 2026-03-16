@@ -336,10 +336,15 @@
   },
   "finalCta": {
     "headline": "She Took Care of You for 30 Years. This Takes 30 Days.",
-    "description": "Professional team. Proven system. Triple guarantee. You'll get weekly proof it's working.",
-    "scarcity": "4 spots per cohort · Next cohort forming now",
+    "description": "Professional team. Proven system. Double guarantee. You'll get weekly proof it's working.",
+    "scarcity": "4 spots per cohort · Next cohort: July 14, 2026",
+    "urgency": "Registration closes July 7. After that, next available cohort is September.",
     "ctaButton": "Reserve a Spot",
-    "reassurance": "84% refund in first 5 days · Medical screening included · Installments available"
+    "reassurance": "84% refund in first 5 days · 7kg guaranteed or free coaching continues · Installments available"
+  },
+  "urgencyBar": {
+    "text": "Next cohort: July 14 · 4 spots · Registration closes July 7",
+    "ctaButton": "Reserve"
   },
   "footer": {
     "brandName": "StepReset",
