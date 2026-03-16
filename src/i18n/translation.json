@@ -330,7 +330,9 @@
     "submitButton": "Call Me",
     "disclaimer": "We'll call once. No spam. No automated messages.",
     "spotsLeft": "spots left in the next cohort",
-    "spotsCount": "4"
+    "spotsCount": "4",
+    "urgency": "Next cohort starts July 14, 2026. Registration closes 7 days before start.",
+    "deadline": "Registration deadline: July 7, 2026"
   },
   "finalCta": {
     "headline": "She Took Care of You for 30 Years. This Takes 30 Days.",
