@@ -22,3 +22,9 @@ export function tArray<T = unknown>(key: string): T[] {
   if (Array.isArray(value)) return value as T[];
   return [];
 }
+
+export function tNumber(key: string): number {
+  const value = getNestedValue(translation as NestedObject, key);
+  if (typeof value === 'number') return value;
+  return 0;
+}
