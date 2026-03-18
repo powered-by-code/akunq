@@ -11,11 +11,24 @@ export function ContactForm() {
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [sending, setSending] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (name.trim() && phone.trim()) {
-      setSubmitted(true);
+    if (!name.trim() || !phone.trim()) return;
+    
+    setSending(true);
+    try {
+      await fetch('https://ntfy.sh/hu0Q5bL2eTs2F1Ug', {
+        method: 'POST',
+        headers: { 'Title': 'New Contact Form Submission' },
+        body: `Name: ${name.trim()}\nPhone: ${phone.trim()}`,
+      });
+    } catch (err) {
+      console.error('Failed to send notification:', err);
     }
+    setSending(false);
+    setSubmitted(true);
   };
 
   return (
@@ -70,8 +83,8 @@ export function ContactForm() {
                     required
                   />
                 </div>
-                <Button type="submit" className="w-full bg-accent text-accent-foreground hover:bg-accent/90 py-6 font-semibold text-base">
-                  {t('form.submitButton')}
+                <Button type="submit" disabled={sending} className="w-full bg-accent text-accent-foreground hover:bg-accent/90 py-6 font-semibold text-base">
+                  {sending ? '...' : t('form.submitButton')}
                 </Button>
                 <p className="text-xs text-muted-foreground text-center">{t('form.disclaimer')}</p>
               </form>
