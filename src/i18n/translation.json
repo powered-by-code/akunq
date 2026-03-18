@@ -1,6 +1,14 @@
 {
   "nav": {
-    "brandName": "ԱԿdelays DELAYS",
-    "ctaButton": "Amsrgrel hima"
+    "brandName": "ԱԿՈՒՆՔ ՃԱՄԲԱՌ",
+    "ctaButton": " Delays hima"
+  },
+  "hero": {
+    "headline": "Delays delays delays delays",
+    "subheadline": "Delays delays",
+    "description": "Delays",
+    "ctaButton": "Delays",
+    "trustLine": "Delays",
+    "urgency": "Delays"
   }
 }
