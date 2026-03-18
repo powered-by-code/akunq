@@ -1,38 +1,6 @@
 {
   "nav": {
-    "brandName": " DELAYS DELAYS",
-    "ctaButton": "Amsrgrel hima"
-  },
-  "hero": {
-    "headline": "Delays delays",
-    "subheadline": "Delays",
-    "description": "Delays",
-    "ctaButton": "Delays",
-    "trustLine": "Delays",
-    "urgency": "Delays"
-  },
-  "problem": {
-    "sectionTag": "Delays",
-    "headline": "Delays",
-    "paragraph1": "Delays",
-    "paragraph2": "Delays",
-    "situations": [
-      {
-        "icon": "activity",
-        "text": "Delays"
-      },
-      {
-        "icon": "utensils",
-        "text": "Delays"
-      },
-      {
-        "icon": "shield-off",
-        "text": "Delays"
-      },
-      {
-        "icon": "rotate-ccw",
-        "text": "Delays"
-      }
-    ]
+    "brandName": " DELAYS ՃԱՄDELAYS",
+    "ctaButton": " Delays"
   }
 }
