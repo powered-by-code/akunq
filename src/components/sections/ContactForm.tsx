@@ -26,8 +26,8 @@ export function ContactForm() {
           {submitted ? (
             <div className="text-center py-8">
               <CheckCircle size={48} className="text-primary mx-auto mb-4" />
-              <h3 className="text-xl font-bold text-text-headline mb-2">Thank you!</h3>
-              <p className="text-text-body">We'll call you within 24 hours.</p>
+              <h3 className="text-xl font-bold text-text-headline mb-2">{t('form.thankYou')}</h3>
+              <p className="text-text-body">{t('form.callSoon')}</p>
             </div>
           ) : (
             <>
