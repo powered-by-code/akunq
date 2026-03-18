@@ -83,8 +83,8 @@ export function ContactForm() {
                     required
                   />
                 </div>
-                <Button type="submit" className="w-full bg-accent text-accent-foreground hover:bg-accent/90 py-6 font-semibold text-base">
-                  {t('form.submitButton')}
+                <Button type="submit" disabled={sending} className="w-full bg-accent text-accent-foreground hover:bg-accent/90 py-6 font-semibold text-base">
+                  {sending ? '...' : t('form.submitButton')}
                 </Button>
                 <p className="text-xs text-muted-foreground text-center">{t('form.disclaimer')}</p>
               </form>
