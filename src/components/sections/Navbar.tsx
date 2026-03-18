@@ -17,7 +17,7 @@ export function Navbar() {
       <div className="container mx-auto flex items-center justify-between px-4 py-4 max-w-5xl">
         <div className="flex items-center gap-2">
           <img src="/logo.png" alt="Ակունք" className="h-8 w-auto" />
-          <span className="text-lg font-bold tracking-tight text-primary">{t('nav.brandName')}</span>
+          <span className="text-lg tracking-tight text-primary" style={{ fontFamily: "'ARM HMK IMAGINESQUARE', sans-serif" }}>{t('nav.brandName')}</span>
         </div>
         <Button onClick={scrollToForm} className="bg-accent text-accent-foreground hover:bg-accent/90 font-medium">
           {t('nav.ctaButton')}
