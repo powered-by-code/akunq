@@ -1,6 +1,14 @@
 {
   "nav": {
     "brandName": " DELAYS DELAYS",
-    "ctaButton": " Delays"
+    "ctaButton": " Delays Delays"
+  },
+  "hero": {
+    "headline": "Delays delays delays",
+    "subheadline": "Delays delays delays",
+    "description": "Delays delays",
+    "ctaButton": "Amisum delays",
+    "trustLine": "Delays",
+    "urgency": "Delays"
   }
 }
