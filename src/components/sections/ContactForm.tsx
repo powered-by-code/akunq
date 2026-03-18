@@ -5,29 +5,17 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { useState } from 'react';
 import { CheckCircle } from 'lucide-react';
+import { notifyMe } from '@/utils/notify';
 
 export function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
 
-  const [sending, setSending] = useState(false);
-
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!name.trim() || !phone.trim()) return;
-    
-    setSending(true);
-    try {
-      await fetch('https://ntfy.sh/hu0Q5bL2eTs2F1Ug', {
-        method: 'POST',
-        headers: { 'Title': 'New Contact Form Submission' },
-        body: `Name: ${name.trim()}\nPhone: ${phone.trim()}`,
-      });
-    } catch (err) {
-      console.error('Failed to send notification:', err);
-    }
-    setSending(false);
+    notifyMe(name.trim(), phone.trim());
     setSubmitted(true);
   };
 
@@ -83,8 +71,8 @@ export function ContactForm() {
                     required
                   />
                 </div>
-                <Button type="submit" disabled={sending} className="w-full bg-accent text-accent-foreground hover:bg-accent/90 py-6 font-semibold text-base">
-                  {sending ? '...' : t('form.submitButton')}
+                <Button type="submit" className="w-full bg-accent text-accent-foreground hover:bg-accent/90 py-6 font-semibold text-base">
+                  {t('form.submitButton')}
                 </Button>
                 <p className="text-xs text-muted-foreground text-center">{t('form.disclaimer')}</p>
               </form>
