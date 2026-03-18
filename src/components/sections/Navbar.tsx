@@ -15,7 +15,10 @@ export function Navbar() {
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-background/95 backdrop-blur-sm shadow-sm' : 'bg-transparent'}`}>
       <div className="container mx-auto flex items-center justify-between px-4 py-4 max-w-5xl">
-        <span className="text-lg font-bold tracking-tight text-primary">{t('nav.brandName')}</span>
+        <div className="flex items-center gap-2">
+          <img src="/logo.png" alt="Ակունք" className="h-8 w-auto" />
+          <span className="text-lg font-bold tracking-tight text-primary">{t('nav.brandName')}</span>
+        </div>
         <Button onClick={scrollToForm} className="bg-accent text-accent-foreground hover:bg-accent/90 font-medium">
           {t('nav.ctaButton')}
         </Button>
