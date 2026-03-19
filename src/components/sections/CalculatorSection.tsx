@@ -109,10 +109,6 @@ export function CalculatorSection() {
     .replace('{thirtyDayLoss}', String(thirtyDayLoss))
     .replace('{ninetyDayLoss}', String(ninetyDayLoss));
 
-  function scrollToContact() {
-    document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' });
-  }
-
   const yMin = Math.floor(data[data.length - 1].weight - 2);
   const yMax = Math.ceil(data[0].weight + 1);
 
@@ -270,14 +266,6 @@ export function CalculatorSection() {
 
 
         {/* CTA */}
-        <div className="text-center mt-8">
-<button
-            onClick={scrollToContact}
-            className="inline-flex items-center justify-center rounded-lg bg-accent px-8 py-3 text-sm font-semibold text-white hover:bg-accent/90 transition-colors"
-          >
-            {t('calculator.ctaButton')}
-          </button>
-        </div>
       </div>
     </div>
   );

@@ -71,7 +71,7 @@ export function ContactForm() {
                     required
                   />
                 </div>
-                <Button type="submit" className="w-full bg-accent text-accent-foreground hover:bg-accent/90 py-6 font-semibold text-base">
+                <Button type="submit" className="w-full bg-green-600 text-white hover:bg-green-700 py-7 font-bold text-lg rounded-xl animate-pulse-subtle">
                   {t('form.submitButton')}
                 </Button>
                 <p className="text-xs text-muted-foreground text-center">{t('form.disclaimer')}</p>
