@@ -1,4 +1,4 @@
-import { t } from '@/i18n/useTranslation';
+import { t, tHtml } from '@/i18n/useTranslation';
 import { Button } from '@/components/ui/button';
 import { scrollToForm } from '@/lib/scrollToForm';
 
@@ -15,7 +15,7 @@ export function Hero() {
             {t('hero.headline')}
           </h1>
           <p className="text-lg md:text-xl text-white/90 leading-relaxed max-w-2xl mx-auto drop-shadow-md mb-6">
-            {t('hero.subheadline')}
+            {tHtml('hero.subheadline')}
           </p>
           <Button
             onClick={scrollToForm}

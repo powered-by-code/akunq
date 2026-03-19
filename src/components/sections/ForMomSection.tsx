@@ -1,4 +1,4 @@
-import { t, tArray } from '@/i18n/useTranslation';
+import { t, tArray, tHtml } from '@/i18n/useTranslation';
 import { AnimatedSection } from '@/components/AnimatedSection';
 import { Mountain, ChefHat, Users, Heart, Phone } from 'lucide-react';
 
@@ -12,7 +12,6 @@ const iconMap: Record<string, React.ElementType> = {
 
 export function ForMomSection() {
   const highlights = tArray<{ icon: string; text: string }>('forMom.highlights');
-  const letterText = t('forMom.letter');
 
   return (
     <AnimatedSection className="py-20 px-4 bg-warm-cream">
@@ -27,7 +26,7 @@ export function ForMomSection() {
 
         <div className="bg-card rounded-xl border shadow-sm p-8 md:p-10 mb-10">
           <div className="font-serif-warm text-text-body leading-loose whitespace-pre-line text-base">
-            {letterText}
+            {tHtml('forMom.letter')}
           </div>
         </div>
 

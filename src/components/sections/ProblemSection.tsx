@@ -1,4 +1,4 @@
-import { t, tArray } from '@/i18n/useTranslation';
+import { t, tArray, tHtml } from '@/i18n/useTranslation';
 import { AnimatedSection } from '@/components/AnimatedSection';
 import { Activity, Utensils, ShieldOff, RotateCcw } from 'lucide-react';
 
@@ -18,7 +18,7 @@ export function ProblemSection() {
         <span className="text-xs uppercase tracking-widest text-primary font-semibold">{t('problem.sectionTag')}</span>
         <h2 className="text-3xl md:text-4xl font-bold text-text-headline mt-3 mb-6">{t('problem.headline')}</h2>
         <p className="text-text-body leading-relaxed mb-4 max-w-3xl">{t('problem.paragraph1')}</p>
-        <p className="text-text-body leading-relaxed mb-10 max-w-3xl">{t('problem.paragraph2')}</p>
+        <p className="text-text-body leading-relaxed mb-10 max-w-3xl">{tHtml('problem.paragraph2')}</p>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {situations.map((s, i) => {
             const Icon = iconMap[s.icon] || Activity;
