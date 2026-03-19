@@ -16,7 +16,7 @@ export function GuaranteeSection() {
         <span className="text-xs uppercase tracking-widest text-primary font-semibold">{t('guarantee.sectionTag')}</span>
         <h2 className="text-3xl md:text-4xl font-bold text-text-headline mt-3 mb-10">{t('guarantee.headline')}</h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
           {guarantees.map((g, i) => (
             <div key={i} className="bg-card border rounded-lg p-6">
               <span className={`inline-block text-xs font-semibold px-3 py-1 rounded-full mb-4 ${badgeColor(g.type)}`}>
