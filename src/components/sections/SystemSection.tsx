@@ -1,5 +1,6 @@
 import { t, tArray } from '@/i18n/useTranslation';
 import { AnimatedSection } from '@/components/AnimatedSection';
+import { CalculatorSection } from '@/components/sections/CalculatorSection';
 import { MapPin } from 'lucide-react';
 
 export function SystemSection() {
@@ -27,7 +28,9 @@ export function SystemSection() {
           ))}
         </div>
 
-        <div className="bg-primary/5 border border-primary/20 rounded-lg p-6">
+        <CalculatorSection />
+
+        <div className="bg-primary/5 border border-primary/20 rounded-lg p-6 mt-10">
           <h3 className="text-base font-bold text-text-headline mb-2">{t('system.reporting.headline')}</h3>
           <p className="text-sm text-text-body leading-relaxed">{t('system.reporting.description')}</p>
         </div>
