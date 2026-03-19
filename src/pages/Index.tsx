@@ -26,8 +26,8 @@ const Index = () => {
       <ForMomSection />
       <ValueStack />
       <GuaranteeSection />
-      <ResultsSection />
-      <TestimonialsSection />
+      {/* <ResultsSection /> */}
+      {/* <TestimonialsSection /> */}
       <FAQSection />
       <ContactForm />
       <FinalCTA />

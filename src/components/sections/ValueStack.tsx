@@ -32,8 +32,6 @@ export function ValueStack() {
             </div>
           ))}
         </div>
-        <p className="text-right text-sm font-mono-data text-primary font-medium mb-10">{fmt(bundlesTotal)}</p>
-
         <h3 className="text-lg font-bold text-text-headline mb-4">{t('valueStack.bonusHeadline')}</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-4">
           {bonuses.map((b, i) => (
@@ -46,11 +44,27 @@ export function ValueStack() {
             </div>
           ))}
         </div>
-        <p className="text-right text-sm font-mono-data text-accent font-medium mb-10">{fmt(bonusesTotal)}</p>
 
-        <div className="text-center py-8 border-t">
-          <p className="text-lg text-muted-foreground line-through mb-2">{fmt(grandTotal)}</p>
-          <p className="text-5xl font-bold text-primary mb-4">{fmt(price)}</p>
+        <div className="border-t mt-6 pt-6 space-y-2 max-w-sm mx-auto">
+          <div className="flex justify-between text-sm text-text-body">
+            <span>{t('valueStack.bundlesTotalLabel')}</span>
+            <span className="font-mono-data">{fmt(bundlesTotal)}</span>
+          </div>
+          <div className="flex justify-between text-sm text-text-body">
+            <span>{t('valueStack.bonusTotalLabel')}</span>
+            <span className="font-mono-data">+ {fmt(bonusesTotal)}</span>
+          </div>
+          <div className="flex justify-between text-sm font-semibold text-text-headline border-t pt-2">
+            <span>{t('valueStack.grandTotalLabel')}</span>
+            <span className="font-mono-data line-through text-muted-foreground">{fmt(grandTotal)}</span>
+          </div>
+          <div className="flex justify-between text-3xl font-bold text-primary pt-2">
+            <span>{t('valueStack.priceLabel')}</span>
+            <span className="font-mono-data">{fmt(price)}</span>
+          </div>
+        </div>
+
+        <div className="text-center mt-8">
           <Button onClick={scrollToForm} size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 px-8 py-6 font-semibold">
             {t('valueStack.ctaButton')}
           </Button>
