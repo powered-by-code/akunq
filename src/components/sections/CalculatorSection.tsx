@@ -77,7 +77,7 @@ function CustomTooltip({ active, payload }: { active?: boolean; payload?: Array<
   return (
     <div className="bg-card border rounded-lg px-3 py-2 shadow-md text-sm">
       <p className="text-text-body">
-        Day {d.day}: <span className="font-bold text-text-headline">{d.weight} kg</span>
+        Day {d.day}: <span className="font-bold text-text-headline">{d.weight} կգ</span>
       </p>
     </div>
   );
@@ -124,9 +124,6 @@ export function CalculatorSection() {
       <h3 className="text-2xl md:text-3xl font-bold text-text-headline mt-3 mb-4">
         {t('calculator.headline')}
       </h3>
-      <p className="text-text-body leading-relaxed mb-8 max-w-3xl">
-        {t('calculator.description')}
-      </p>
 
       {/* Sliders */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
@@ -135,14 +132,14 @@ export function CalculatorSection() {
           value={weight}
           onChange={setWeight}
           {...RANGES.weight}
-          unit="kg"
+          unit="կգ"
         />
         <SliderInput
           label={t('calculator.heightLabel')}
           value={height}
           onChange={setHeight}
           {...RANGES.height}
-          unit="cm"
+          unit="սմ"
         />
         <SliderInput
           label={t('calculator.ageLabel')}
@@ -170,14 +167,14 @@ export function CalculatorSection() {
 
               <CartesianGrid strokeDasharray="3 3" stroke="hsl(0, 0%, 90%)" />
 
-              {/* Phase background bands (no labels — legend is below chart) */}
-              <ReferenceArea x1={0} x2={14} y1={yMin} y2={yMax} fill="hsl(144, 20%, 30%)" fillOpacity={0.06} />
-              <ReferenceArea x1={14} x2={30} y1={yMin} y2={yMax} fill="hsl(30, 54%, 50%)" fillOpacity={0.06} />
-              <ReferenceArea x1={30} x2={90} y1={yMin} y2={yMax} fill="hsl(144, 20%, 45%)" fillOpacity={0.04} />
+              {/* Phase background bands */}
+              <ReferenceArea x1={0} x2={14} y1={yMin} y2={yMax} fill="hsl(144, 40%, 40%)" fillOpacity={0.08} />
+              <ReferenceArea x1={14} x2={30} y1={yMin} y2={yMax} fill="hsl(30, 54%, 50%)" fillOpacity={0.08} />
+              <ReferenceArea x1={30} x2={90} y1={yMin} y2={yMax} fill="hsl(220, 45%, 50%)" fillOpacity={0.06} />
 
               {/* Vertical dashed lines at phase boundaries */}
-              <ReferenceLine x={14} stroke="hsl(144, 20%, 30%)" strokeDasharray="5 5" strokeOpacity={0.5} />
-              <ReferenceLine x={30} stroke="hsl(30, 54%, 50%)" strokeDasharray="5 5" strokeOpacity={0.5} />
+              <ReferenceLine x={14} stroke="hsl(0, 0%, 75%)" strokeDasharray="5 5" />
+              <ReferenceLine x={30} stroke="hsl(0, 0%, 75%)" strokeDasharray="5 5" />
 
               <XAxis
                 dataKey="day"
@@ -191,7 +188,7 @@ export function CalculatorSection() {
                 tick={{ fontSize: 12, fill: 'hsl(0, 0%, 29%)' }}
                 tickLine={false}
                 axisLine={{ stroke: 'hsl(0, 0%, 85%)' }}
-                unit=" kg"
+                unit=" կգ"
               />
 
               <Tooltip content={<CustomTooltip />} />
@@ -220,7 +217,7 @@ export function CalculatorSection() {
                     stroke="white"
                     strokeWidth={2}
                     label={{
-                      value: `${point.weight} kg`,
+                      value: `${point.weight} կգ`,
                       position: day === 0 ? 'top' : 'bottom',
                       fontSize: 11,
                       fontWeight: 600,
@@ -237,7 +234,7 @@ export function CalculatorSection() {
                   y={data[30].weight}
                   r={0}
                   label={{
-                    value: `−${thirtyDayLoss} kg`,
+                    value: `−${thirtyDayLoss} կգ`,
                     position: 'top',
                     fontSize: 13,
                     fontWeight: 700,
@@ -253,15 +250,15 @@ export function CalculatorSection() {
         {/* Phase legend */}
         <div className="flex flex-col sm:flex-row gap-2 sm:gap-6 mt-4 px-2">
           <div className="flex items-center gap-2">
-            <span className="inline-block w-3 h-3 rounded-sm" style={{ background: 'hsl(144, 20%, 30%)', opacity: 0.3 }} />
+            <span className="inline-block w-3 h-3 rounded-sm" style={{ background: 'hsl(144, 40%, 40%)', opacity: 0.4 }} />
             <span className="text-xs text-text-body">{t('calculator.phase1Label')} — Days 1–14</span>
           </div>
           <div className="flex items-center gap-2">
-            <span className="inline-block w-3 h-3 rounded-sm" style={{ background: 'hsl(30, 54%, 50%)', opacity: 0.3 }} />
+            <span className="inline-block w-3 h-3 rounded-sm" style={{ background: 'hsl(30, 54%, 50%)', opacity: 0.4 }} />
             <span className="text-xs text-text-body">{t('calculator.phase2Label')} — Days 15–30</span>
           </div>
           <div className="flex items-center gap-2">
-            <span className="inline-block w-3 h-3 rounded-sm" style={{ background: 'hsl(144, 20%, 45%)', opacity: 0.3 }} />
+            <span className="inline-block w-3 h-3 rounded-sm" style={{ background: 'hsl(220, 45%, 50%)', opacity: 0.4 }} />
             <span className="text-xs text-text-body">{t('calculator.phase3Label')} — Days 31–90</span>
           </div>
         </div>
@@ -271,15 +268,10 @@ export function CalculatorSection() {
           {resultText}
         </p>
 
-        {/* Disclaimer */}
-        <p className="text-xs text-muted-foreground mt-3 text-center leading-relaxed">
-          {t('calculator.disclaimer')}
-        </p>
 
         {/* CTA */}
         <div className="text-center mt-8">
-          <p className="text-text-body font-medium mb-3">{t('calculator.ctaText')}</p>
-          <button
+<button
             onClick={scrollToContact}
             className="inline-flex items-center justify-center rounded-lg bg-accent px-8 py-3 text-sm font-semibold text-white hover:bg-accent/90 transition-colors"
           >

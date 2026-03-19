@@ -309,23 +309,17 @@
     "location": "Ստեփանավան, Հայաստան"
   },
   "calculator": {
-    "sectionTag": "See The Projection",
-    "headline": "How Much Will She Lose?",
-    "description": "Enter your mom's current weight and height. We'll show you the projected weight loss over 90 days based on our protocol.",
-    "weightLabel": "Current Weight (kg)",
-    "weightPlaceholder": "e.g. 85",
-    "heightLabel": "Height (cm)",
-    "heightPlaceholder": "e.g. 165",
-    "ageLabel": "Age",
-    "agePlaceholder": "e.g. 52",
-    "calculateButton": "Show Projection",
-    "chartTitle": "Projected Weight Loss \u2014 90 Days",
-    "phase1Label": "Camp (Stepanavan)",
-    "phase2Label": "Home (Guided)",
-    "phase3Label": "Maintenance",
-    "resultText": "Projected loss in 30 days: {thirtyDayLoss} kg \u00b7 In 90 days: {ninetyDayLoss} kg",
-    "disclaimer": "Projection based on Mifflin-St Jeor BMR with ketogenic deficit model. Individual results vary. This is an estimate, not a guarantee.",
-    "ctaText": "Want this result for your mom?",
-    "ctaButton": "Reserve a Spot"
+    "sectionTag": "Տեսեք կանխատեսումը",
+    "headline": "Որքա՞ն կնիհարի նա",
+    "description": "Մուտքագրեք ձեր մայրիկի ընթացիկ քաշն ու հասակը: Մենք ցույց կտանք քաշի կանխատեսվող նվազումը 90 օրվա ընթացքում՝ մեր ծրագրի հիման վրա:",
+    "weightLabel": "Ընթացիկ քաշ (կգ)",
+    "heightLabel": "Հասակ (սմ)",
+    "ageLabel": "Տարիք",
+    "chartTitle": "Քաշի կանխատեսվող նվազում — 90 օր",
+    "phase1Label": "Փուլ 1. Ճամբար (Ստեփանավան)",
+    "phase2Label": "Փուլ 2. Տանը (Ուղղորդված)",
+    "phase3Label": "Կայունացում",
+    "resultText": "Կանխատեսվող կորուստ 30 օրում՝ {thirtyDayLoss} կգ · 90 օրում՝ {ninetyDayLoss} կգ",
+    "ctaButton": "Ամրագրել հիմա"
   }
 }

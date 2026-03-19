@@ -17,9 +17,11 @@ export function FounderStory() {
             </blockquote>
           </div>
           <div className="flex flex-col items-center">
-            <div className="w-40 h-40 bg-muted rounded-lg flex items-center justify-center mb-3">
-              <User size={48} className="text-muted-foreground" />
-            </div>
+            <img
+              src="/founder-before-after.png"
+              alt={t('story.photoCaption')}
+              className="w-full max-w-xs rounded-lg mb-3"
+            />
             <p className="text-sm text-muted-foreground font-mono-data">{t('story.photoCaption')}</p>
           </div>
         </div>
