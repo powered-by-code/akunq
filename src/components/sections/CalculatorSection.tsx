@@ -89,7 +89,7 @@ const DEFAULTS = { weight: 85, height: 165, age: 52 };
 const RANGES = {
   weight: { min: 70, max: 130, step: 1 },
   height: { min: 130, max: 220, step: 1 },
-  age: { min: 45, max: 70, step: 1 },
+  age: { min: 35, max: 70, step: 1 },
 };
 
 export function CalculatorSection() {
