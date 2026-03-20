@@ -30,7 +30,7 @@ const Index = () => {
       {/* <TestimonialsSection /> */}
       <FAQSection />
       <ContactForm />
-      <FinalCTA />
+      {/* <FinalCTA /> */}
       <Footer />
     </div>
   );

@@ -18,7 +18,7 @@ export function FounderStory() {
           </div>
           <div className="flex flex-col items-center">
             <img
-              src="/founder-before-after.png"
+              src="/founder-before-after.webp"
               alt={t('story.photoCaption')}
               className="w-full rounded-lg mb-3"
             />
