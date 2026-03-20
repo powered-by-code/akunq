@@ -23,13 +23,13 @@ const Index = () => {
       <SystemSection />
       <FounderStory />
       <HowItWorks />
-      <ForMomSection />
       <ValueStack />
       <GuaranteeSection />
+      <ContactForm />
       {/* <ResultsSection /> */}
       {/* <TestimonialsSection /> */}
       <FAQSection />
-      <ContactForm />
+      <ForMomSection />
       {/* <FinalCTA /> */}
       <Footer />
     </div>
