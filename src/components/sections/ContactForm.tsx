@@ -39,8 +39,8 @@ export function ContactForm() {
               </p>
 
               <div className="flex flex-col items-center gap-2 mb-6">
-                <span className="inline-flex items-center gap-1 bg-accent/10 text-accent font-mono-data text-sm font-semibold px-4 py-2 rounded-full">
-                  {t('form.spotsCount')} {t('form.spotsLeft')}
+                <span className="inline-flex items-center gap-2 bg-accent/10 text-accent font-mono-data text-xl font-bold px-6 py-3 rounded-full">
+                  {t('form.spotsLeft')}
                 </span>
                 <span className="text-xs font-semibold text-text-headline">
                   {t('form.deadline')}

@@ -1,6 +1,6 @@
 import { t, tHtml } from '@/i18n/useTranslation';
 import { Button } from '@/components/ui/button';
-import { scrollToForm } from '@/lib/scrollToForm';
+import { ChevronDown } from 'lucide-react';
 
 export function Hero() {
   return (
@@ -18,10 +18,14 @@ export function Hero() {
             {tHtml('hero.subheadline')}
           </p>
           <Button
-            onClick={scrollToForm}
+            onClick={() => {
+              const next = document.getElementById('hero-section')?.nextElementSibling;
+              next?.scrollIntoView({ behavior: 'smooth' });
+            }}
             size="lg"
-            className="bg-accent text-accent-foreground hover:bg-accent/90 text-base px-8 py-6 font-semibold">
+            className="bg-white/20 text-white border border-white/30 hover:bg-white/30 text-base px-8 py-6 font-semibold">
             {t('hero.ctaButton')}
+            <ChevronDown className="ml-2 h-5 w-5" />
           </Button>
         </div>
       </div>
