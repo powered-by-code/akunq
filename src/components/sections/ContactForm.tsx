@@ -35,7 +35,8 @@ export function ContactForm() {
               <p className="text-sm text-text-body text-center mb-3">{t('form.description')}</p>
 
               <p className="text-xs text-accent font-medium text-center mb-4">
-                {t('form.urgency')}
+                {t('form.urgency')}{' '}
+                <a href="#services" className="underline hover:text-accent/80">{t('form.servicesLink')}</a>
               </p>
 
               <div className="flex flex-col items-center gap-2 mb-6">

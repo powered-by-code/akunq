@@ -16,7 +16,7 @@ export function ValueStack() {
   const price = tNumber('valueStack.price');
 
   return (
-    <AnimatedSection className="py-20 px-4 bg-secondary">
+    <AnimatedSection id="services" className="py-20 px-4 bg-secondary">
       <div className="container mx-auto max-w-4xl">
         <span className="text-xs uppercase tracking-widest text-primary font-semibold">{t('valueStack.sectionTag')}</span>
         <h2 className="text-3xl md:text-4xl font-bold text-text-headline mt-3 mb-10">{t('valueStack.headline')}</h2>
