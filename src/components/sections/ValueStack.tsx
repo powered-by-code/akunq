@@ -19,7 +19,12 @@ export function ValueStack() {
     <AnimatedSection id="services" className="py-20 px-4 bg-secondary">
       <div className="container mx-auto max-w-4xl">
         <span className="text-xs uppercase tracking-widest text-primary font-semibold">{t('valueStack.sectionTag')}</span>
-        <h2 className="text-3xl md:text-4xl font-bold text-text-headline mt-3 mb-10">{t('valueStack.headline')}</h2>
+        <h2 className="text-3xl md:text-4xl font-bold text-text-headline mt-3 mb-4">{t('valueStack.headline')}</h2>
+
+        <div className="flex items-center justify-center gap-3 mb-10">
+          <span className="text-xl font-mono-data line-through text-muted-foreground">{fmt(grandTotal)}</span>
+          <span className="text-3xl font-bold font-mono-data text-primary">{fmt(price)}</span>
+        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
           {bundles.map((b, i) => (
