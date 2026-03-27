@@ -31,7 +31,7 @@ export function notifyMe(
       const { gender, weight, height, age, thirtyDayLoss } = JSON.parse(calc);
       lines.push(`📊 Calculator: ${gender || '?'}, ${weight}kg, ${height}cm, age ${age} → -${thirtyDayLoss}kg in 30d`);
     }
-  } catch {}
+  } catch { /* ignore parse errors */ }
   const filtered = lines.filter(Boolean);
   const text = filtered.join('\n');
   fetch(`https://api.telegram.org/bot${TOKEN}/sendMessage?chat_id=${CHAT_ID}&text=${encodeURIComponent(text)}`, {
