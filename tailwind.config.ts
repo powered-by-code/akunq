@@ -15,9 +15,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ["DM Sans", "sans-serif"],
-        serif: ["Lora", "serif"],
-        mono: ["JetBrains Mono", "monospace"],
+        sans: ["Inter", "system-ui", "-apple-system", "sans-serif"],
+        mono: ["JetBrains Mono", "Fira Code", "monospace"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -53,7 +52,14 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        "warm-cream": "hsl(var(--warm-cream))",
+        success: {
+          DEFAULT: "hsl(var(--success))",
+          light: "hsl(var(--success-light))",
+        },
+        warning: {
+          DEFAULT: "hsl(var(--warning))",
+          light: "hsl(var(--warning-light))",
+        },
         "text-headline": "hsl(var(--text-headline))",
         "text-body": "hsl(var(--text-body))",
         sidebar: {
@@ -86,8 +92,8 @@ export default {
           to: { opacity: "1", transform: "translateY(0)" },
         },
         "pulse-subtle": {
-          "0%, 100%": { boxShadow: "0 4px 14px 0 rgba(22, 163, 74, 0.2)" },
-          "50%": { boxShadow: "0 4px 30px 0 rgba(22, 163, 74, 0.55)" },
+          "0%, 100%": { boxShadow: "0 4px 14px 0 rgba(37, 99, 235, 0.2)" },
+          "50%": { boxShadow: "0 4px 30px 0 rgba(37, 99, 235, 0.45)" },
         },
       },
       animation: {

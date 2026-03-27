@@ -1,8 +1,29 @@
 import { createElement, Fragment } from 'react';
 import type { ReactNode } from 'react';
-import translation from './translation.json';
+import campTranslation from './translation.json';
+import devTranslation from './translation.dev.json';
 
 type NestedObject = { [key: string]: unknown };
+
+// Add new variants here — route and import are all you need.
+const variants: [string, NestedObject][] = [
+  ['camp', campTranslation as NestedObject],
+];
+
+const defaultData = devTranslation as NestedObject;
+
+// Exported so App.tsx can auto-generate routes
+export const variantSlugs = variants.map(([slug]) => slug);
+
+function getTranslation(): NestedObject {
+  if (typeof window !== 'undefined') {
+    const path = window.location.pathname.replace(/^\//, '').split('/')[0];
+    for (const [slug, data] of variants) {
+      if (path === slug) return data;
+    }
+  }
+  return defaultData;
+}
 
 function getNestedValue(obj: NestedObject, path: string): unknown {
   return path.split('.').reduce<unknown>((acc, key) => {
@@ -14,13 +35,13 @@ function getNestedValue(obj: NestedObject, path: string): unknown {
 }
 
 export function t(key: string): string {
-  const value = getNestedValue(translation as NestedObject, key);
+  const value = getNestedValue(getTranslation(), key);
   if (typeof value === 'string') return value;
   return key;
 }
 
 export function tArray<T = unknown>(key: string): T[] {
-  const value = getNestedValue(translation as NestedObject, key);
+  const value = getNestedValue(getTranslation(), key);
   if (Array.isArray(value)) return value as T[];
   return [];
 }
@@ -35,7 +56,7 @@ export function tHtml(key: string): ReactNode {
 }
 
 export function tNumber(key: string): number {
-  const value = getNestedValue(translation as NestedObject, key);
+  const value = getNestedValue(getTranslation(), key);
   if (typeof value === 'number') return value;
   return 0;
 }
