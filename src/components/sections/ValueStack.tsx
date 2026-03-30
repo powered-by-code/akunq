@@ -17,8 +17,9 @@ export function ValueStack() {
 
   return (
     <AnimatedSection id="services" className="py-20 px-4 bg-background relative overflow-hidden">
+      <div aria-hidden="true" className="absolute inset-0 wash-blue pointer-events-none" />
       {/* Ambient glow */}
-      <div aria-hidden="true" className="glow-orb w-[400px] h-[400px] bottom-[10%] left-[-100px] opacity-10" style={{ background: 'rgba(59,130,246,0.3)' }} />
+      <div aria-hidden="true" className="glow-orb w-[500px] h-[500px] bottom-[10%] left-[-100px] opacity-25" style={{ background: 'rgba(59,130,246,0.3)' }} />
       <div className="container mx-auto max-w-5xl relative">
         <span className="text-xs uppercase tracking-[0.08em] text-gradient-blue font-semibold block mb-3">{t('valueStack.sectionTag')}</span>
         <h2 className="text-3xl md:text-4xl font-bold text-gradient mb-4 max-w-[800px]">{t('valueStack.headline')}</h2>
@@ -66,7 +67,7 @@ export function ValueStack() {
             <span>{t('valueStack.grandTotalLabel')}</span>
             <span className="font-mono-data line-through text-muted-foreground">{fmt(grandTotal)}</span>
           </div>
-          <div className="flex justify-between text-3xl font-bold text-text-headline pt-2">
+          <div className="flex items-end justify-between text-3xl font-bold text-text-headline pt-2">
             <span>{t('valueStack.priceLabel')}</span>
             <span className="font-mono-data">{fmt(price)}</span>
           </div>

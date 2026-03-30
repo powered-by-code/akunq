@@ -14,8 +14,9 @@ export function ProblemSection() {
 
   return (
     <AnimatedSection className="py-20 px-4 bg-background relative overflow-hidden">
+      <div aria-hidden="true" className="absolute inset-0 wash-purple pointer-events-none" />
       {/* Ambient glow */}
-      <div aria-hidden="true" className="glow-orb w-[400px] h-[400px] top-[10%] right-[-100px] opacity-15" style={{ background: 'rgba(59,130,246,0.3)' }} />
+      <div aria-hidden="true" className="glow-orb w-[500px] h-[500px] top-[10%] right-[-100px] opacity-25" style={{ background: 'rgba(59,130,246,0.3)' }} />
       <div className="container mx-auto max-w-5xl relative">
         <span className="text-xs uppercase tracking-[0.08em] text-gradient-blue font-semibold block mb-3">{t('problem.sectionTag')}</span>
         <h2 className="text-3xl md:text-4xl font-bold text-gradient mb-6 max-w-[800px]">{t('problem.headline')}</h2>

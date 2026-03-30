@@ -123,7 +123,7 @@ export function CalculatorSection() {
   const yMax = Math.ceil(data[0].weight + 1);
 
   return (
-    <div className="mt-10 md:glass-card md:rounded-xl md:p-8 md:glow-blue">
+    <div className="mt-10 p-4 md:p-8 rounded-xl backdrop-blur-sm border border-[rgba(255,255,255,0.06)]" style={{ background: 'rgba(255,255,255,0.03)' }}>
       <span className="text-xs uppercase tracking-[0.08em] text-gradient-blue font-semibold block mb-3">
         {t('calculator.sectionTag')}
       </span>
@@ -174,7 +174,7 @@ export function CalculatorSection() {
       </div>
 
       {/* Chart */}
-      <div className="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen px-1 py-4 md:static md:ml-0 md:mr-0 md:w-auto md:px-6 md:py-6 md:bg-[rgba(255,255,255,0.02)] md:border md:border-[rgba(255,255,255,0.06)] md:rounded-xl">
+      <div className="py-4 md:px-6 md:py-6 md:bg-[rgba(255,255,255,0.02)] md:border md:border-[rgba(255,255,255,0.06)] md:rounded-xl">
         <h4 className="text-base font-bold text-text-headline mb-4">
           {t('calculator.chartTitle')}
         </h4>
@@ -184,17 +184,17 @@ export function CalculatorSection() {
             <LineChart data={data} margin={{ top: 20, right: 20, bottom: 20, left: 10 }}>
               <defs>
                 <linearGradient id="weightGradient" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stopColor="#3B82F6" stopOpacity={0.15} />
-                  <stop offset="100%" stopColor="#3B82F6" stopOpacity={0.02} />
+                  <stop offset="0%" stopColor="#3B82F6" stopOpacity={0.30} />
+                  <stop offset="100%" stopColor="#3B82F6" stopOpacity={0.05} />
                 </linearGradient>
               </defs>
 
-              <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.06)" />
+              <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.10)" />
 
               {/* Phase background bands */}
-              <ReferenceArea x1={0} x2={14} y1={yMin} y2={yMax} fill="#3B82F6" fillOpacity={0.04} />
-              <ReferenceArea x1={14} x2={30} y1={yMin} y2={yMax} fill="#3B82F6" fillOpacity={0.07} />
-              <ReferenceArea x1={30} x2={90} y1={yMin} y2={yMax} fill="#3B82F6" fillOpacity={0.03} />
+              <ReferenceArea x1={0} x2={14} y1={yMin} y2={yMax} fill="#3B82F6" fillOpacity={0.10} />
+              <ReferenceArea x1={14} x2={30} y1={yMin} y2={yMax} fill="#3B82F6" fillOpacity={0.15} />
+              <ReferenceArea x1={30} x2={90} y1={yMin} y2={yMax} fill="#3B82F6" fillOpacity={0.08} />
 
               {/* Vertical dashed lines at phase boundaries */}
               <ReferenceLine x={14} stroke="#A1A1AA" strokeDasharray="5 5" />

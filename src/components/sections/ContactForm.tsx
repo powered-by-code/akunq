@@ -57,8 +57,9 @@ export function ContactForm() {
 
   return (
     <AnimatedSection id="contact-form" className="py-20 px-4 bg-background relative overflow-hidden">
+      <div aria-hidden="true" className="absolute inset-0 wash-purple pointer-events-none" />
       {/* Ambient glow behind form */}
-      <div aria-hidden="true" className="glow-orb w-[400px] h-[400px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-15" style={{ background: 'rgba(59,130,246,0.25)' }} />
+      <div aria-hidden="true" className="glow-orb w-[500px] h-[500px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-30" style={{ background: 'rgba(59,130,246,0.25)' }} />
       <div className="container mx-auto max-w-md relative">
         <div className="glass-card rounded-xl p-8 glow-blue">
           {submitted ? (

@@ -6,7 +6,9 @@ export function SystemSection() {
   const phases = tArray<{ name: string; location: string; description: string; keyMetrics: string }>('system.phases');
 
   return (
-    <AnimatedSection className="py-20 px-4 bg-secondary relative overflow-hidden bg-grid">
+    <AnimatedSection className="py-20 px-4 bg-background relative overflow-hidden">
+      <div aria-hidden="true" className="absolute inset-0 wash-blue pointer-events-none" />
+      <div aria-hidden="true" className="absolute inset-0 bg-grid pointer-events-none" />
       <div className="container mx-auto max-w-5xl relative">
         <span className="text-xs uppercase tracking-[0.08em] text-gradient-blue font-semibold block mb-3">{t('system.sectionTag')}</span>
         <h2 className="text-3xl md:text-4xl font-bold text-gradient mb-4 max-w-[800px]">{t('system.headline')}</h2>

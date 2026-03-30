@@ -28,8 +28,8 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <Navbar />
       <Hero />
-      <div id="calculator" className="py-16 px-4 bg-background relative">
-        <div className="container mx-auto max-w-4xl">
+      <div id="calculator" className="py-16 px-0 md:px-4 bg-background relative">
+        <div className="container mx-auto max-w-4xl px-4 md:px-0">
           <CalculatorSection />
         </div>
         <div className="absolute bottom-0 left-0 right-0 section-divider" />

@@ -5,9 +5,11 @@ export function HowItWorks() {
   const steps = tArray<{ number: string; title: string; description: string }>('howItWorks.steps');
 
   return (
-    <AnimatedSection className="py-20 px-4 bg-secondary relative overflow-hidden bg-grid">
+    <AnimatedSection className="py-20 px-4 bg-background relative overflow-hidden">
+      <div aria-hidden="true" className="absolute inset-0 wash-cyan pointer-events-none" />
+      <div aria-hidden="true" className="absolute inset-0 bg-grid pointer-events-none" />
       {/* Ambient glow */}
-      <div aria-hidden="true" className="glow-orb w-[500px] h-[300px] top-[-50px] left-1/2 -translate-x-1/2 opacity-10" style={{ background: 'rgba(99,102,241,0.4)' }} />
+      <div aria-hidden="true" className="glow-orb w-[600px] h-[400px] top-[-50px] left-1/2 -translate-x-1/2 opacity-25" style={{ background: 'rgba(99,102,241,0.4)' }} />
       <div className="container mx-auto max-w-5xl relative">
         <span className="text-xs uppercase tracking-[0.08em] text-gradient-blue font-semibold block mb-3">{t('howItWorks.sectionTag')}</span>
         <h2 className="text-3xl md:text-4xl font-bold text-gradient mb-12 max-w-[800px]">{t('howItWorks.headline')}</h2>
