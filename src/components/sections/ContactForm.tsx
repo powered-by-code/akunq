@@ -6,6 +6,7 @@ import { Label } from '@/components/ui/label';
 import { useState } from 'react';
 import { CheckCircle, ChevronLeft, ChevronRight } from 'lucide-react';
 import { notifyMe } from '@/utils/notify';
+import { metaPixel } from '@/utils/meta-pixel';
 
 const TOTAL_STEPS = 6;
 
@@ -44,6 +45,7 @@ export function ContactForm() {
   const handleSubmit = () => {
     if (!name.trim() || !phone.trim()) return;
     notifyMe(name.trim(), phone.trim(), workField.trim(), goal.trim(), frustrations.trim(), pastAttempts.trim(), excitement.trim());
+    metaPixel.trackLead();
     setSubmitted(true);
   };
 
