@@ -2,19 +2,20 @@ import { t } from '@/i18n/useTranslation';
 
 export function Footer() {
   return (
-    <footer className="py-10 px-4 bg-[#09090B]">
+    <footer className="py-10 px-4 bg-background relative overflow-hidden">
+      <div className="absolute top-0 left-0 right-0 section-divider" />
       <div className="container mx-auto max-w-4xl">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
           <div>
-            <p className="font-bold text-[#FAFAFA]">{t('footer.brandName')}</p>
-            <p className="text-xs text-[#A1A1AA]">{t('footer.tagline')}</p>
+            <p className="font-bold text-foreground">{t('footer.brandName')}</p>
+            <p className="text-xs text-muted-foreground">{t('footer.tagline')}</p>
           </div>
-          <div className="text-xs text-[#A1A1AA] space-y-1">
+          <div className="text-xs text-muted-foreground space-y-1">
             <p>{t('footer.contact')} {t('footer.email')} · {t('footer.phone')}</p>
             <p>{t('footer.location')}</p>
           </div>
         </div>
-        <p className="text-xs text-[#71717A] text-center mt-6">{t('footer.copyright')}</p>
+        <p className="text-xs text-muted-foreground/60 text-center mt-6">{t('footer.copyright')}</p>
       </div>
     </footer>
   );

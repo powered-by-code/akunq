@@ -8,10 +8,10 @@ export function FAQSection() {
   const items = tArray<{ question: string; answer: string }>('faq.items');
 
   return (
-    <AnimatedSection className="py-20 px-4 bg-white">
-      <div className="container mx-auto max-w-3xl">
-        <span className="text-xs uppercase tracking-[0.08em] text-primary font-semibold block mb-3">{t('faq.sectionTag')}</span>
-        <h2 className="text-3xl md:text-4xl font-bold text-text-headline mb-12 max-w-[800px]">{t('faq.headline')}</h2>
+    <AnimatedSection className="py-20 px-4 bg-secondary relative overflow-hidden bg-grid">
+      <div className="container mx-auto max-w-3xl relative">
+        <span className="text-xs uppercase tracking-[0.08em] text-gradient-blue font-semibold block mb-3">{t('faq.sectionTag')}</span>
+        <h2 className="text-3xl md:text-4xl font-bold text-gradient mb-12 max-w-[800px]">{t('faq.headline')}</h2>
 
         <Accordion type="single" collapsible className="mb-12">
           {items.map((item, i) => (
@@ -27,7 +27,7 @@ export function FAQSection() {
         </Accordion>
 
         <div>
-          <Button onClick={scrollToForm} size="lg" className="bg-primary text-primary-foreground hover:bg-[#1D4ED8] px-8 py-4 font-semibold rounded-lg h-auto">
+          <Button onClick={scrollToForm} size="lg" className="bg-primary text-primary-foreground hover:bg-primary/80 px-8 py-4 font-semibold rounded-lg h-auto glow-blue hover:glow-blue-lg transition-shadow duration-300">
             {t('faq.ctaButton')}
           </Button>
         </div>

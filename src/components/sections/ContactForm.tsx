@@ -56,9 +56,11 @@ export function ContactForm() {
   };
 
   return (
-    <AnimatedSection id="contact-form" className="py-20 px-4 bg-[#FAFAFA]">
-      <div className="container mx-auto max-w-md">
-        <div className="bg-white border border-[#E4E4E7] rounded-xl p-8">
+    <AnimatedSection id="contact-form" className="py-20 px-4 bg-background relative overflow-hidden">
+      {/* Ambient glow behind form */}
+      <div aria-hidden="true" className="glow-orb w-[400px] h-[400px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-15" style={{ background: 'rgba(59,130,246,0.25)' }} />
+      <div className="container mx-auto max-w-md relative">
+        <div className="glass-card rounded-xl p-8 glow-blue">
           {submitted ? (
             <div className="text-center py-8">
               <CheckCircle size={48} className="text-primary mx-auto mb-4" />
@@ -207,7 +209,7 @@ export function ContactForm() {
                     type="button"
                     onClick={handleNext}
                     disabled={!canGoNext()}
-                    className="flex-1 bg-primary text-white hover:bg-[#1D4ED8] h-[52px] font-semibold text-base rounded-lg"
+                    className="flex-1 bg-primary text-white hover:bg-primary/80 h-[52px] font-semibold text-base rounded-lg"
                   >
                     <span className="flex items-center gap-2">
                       {t('form.nextButton')} <ChevronRight size={18} />
@@ -218,7 +220,7 @@ export function ContactForm() {
                     type="button"
                     onClick={handleSubmit}
                     disabled={!canGoNext()}
-                    className="flex-1 bg-primary text-white hover:bg-[#1D4ED8] h-[52px] font-semibold text-base rounded-lg animate-pulse-subtle"
+                    className="flex-1 bg-primary text-white hover:bg-primary/80 h-[52px] font-semibold text-base rounded-lg animate-pulse-subtle"
                   >
                     {t('form.submitButton')}
                   </Button>

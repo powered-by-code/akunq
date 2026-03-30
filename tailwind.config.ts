@@ -2,7 +2,7 @@ import type { Config } from "tailwindcss";
 import tailwindcssAnimate from "tailwindcss-animate";
 
 export default {
-  darkMode: ["class"],
+  darkMode: "class",
   content: ["./pages/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}", "./app/**/*.{ts,tsx}", "./src/**/*.{ts,tsx}"],
   prefix: "",
   theme: {
@@ -62,16 +62,6 @@ export default {
         },
         "text-headline": "hsl(var(--text-headline))",
         "text-body": "hsl(var(--text-body))",
-        sidebar: {
-          DEFAULT: "hsl(var(--sidebar-background))",
-          foreground: "hsl(var(--sidebar-foreground))",
-          primary: "hsl(var(--sidebar-primary))",
-          "primary-foreground": "hsl(var(--sidebar-primary-foreground))",
-          accent: "hsl(var(--sidebar-accent))",
-          "accent-foreground": "hsl(var(--sidebar-accent-foreground))",
-          border: "hsl(var(--sidebar-border))",
-          ring: "hsl(var(--sidebar-ring))",
-        },
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -92,8 +82,8 @@ export default {
           to: { opacity: "1", transform: "translateY(0)" },
         },
         "pulse-subtle": {
-          "0%, 100%": { boxShadow: "0 4px 14px 0 rgba(37, 99, 235, 0.2)" },
-          "50%": { boxShadow: "0 4px 30px 0 rgba(37, 99, 235, 0.45)" },
+          "0%, 100%": { boxShadow: "0 0 20px rgba(59, 130, 246, 0.2), 0 0 60px rgba(59, 130, 246, 0.05)" },
+          "50%": { boxShadow: "0 0 30px rgba(59, 130, 246, 0.35), 0 0 80px rgba(59, 130, 246, 0.12)" },
         },
       },
       animation: {

@@ -75,7 +75,7 @@ function CustomTooltip({ active, payload }: { active?: boolean; payload?: Array<
   if (!active || !payload?.length) return null;
   const d = payload[0].payload;
   return (
-    <div className="bg-white border border-[#E4E4E7] rounded-xl px-3 py-2 shadow-sm text-sm">
+    <div className="bg-[#1a1a1a] border border-border rounded-xl px-3 py-2 shadow-sm text-sm">
       <p className="text-text-body">
         Day {d.day}: <span className="font-bold font-mono-data text-text-headline">{d.weight} կգ</span>
       </p>
@@ -123,11 +123,11 @@ export function CalculatorSection() {
   const yMax = Math.ceil(data[0].weight + 1);
 
   return (
-    <div className="mt-10 md:bg-white md:border md:border-[#E4E4E7] md:rounded-xl md:p-8">
-      <span className="text-xs uppercase tracking-[0.08em] text-primary font-semibold block mb-3">
+    <div className="mt-10 md:glass-card md:rounded-xl md:p-8 md:glow-blue">
+      <span className="text-xs uppercase tracking-[0.08em] text-gradient-blue font-semibold block mb-3">
         {t('calculator.sectionTag')}
       </span>
-      <h3 className="text-2xl md:text-3xl font-bold text-text-headline mb-4 max-w-[800px]">
+      <h3 className="text-2xl md:text-3xl font-bold text-gradient mb-4 max-w-[800px]">
         {t('calculator.headline')}
       </h3>
 
@@ -174,7 +174,7 @@ export function CalculatorSection() {
       </div>
 
       {/* Chart */}
-      <div className="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen px-1 py-4 md:static md:ml-0 md:mr-0 md:w-auto md:px-6 md:py-6 md:bg-[#FAFAFA] md:border md:border-[#E4E4E7] md:rounded-xl">
+      <div className="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen px-1 py-4 md:static md:ml-0 md:mr-0 md:w-auto md:px-6 md:py-6 md:bg-[rgba(255,255,255,0.02)] md:border md:border-[rgba(255,255,255,0.06)] md:rounded-xl">
         <h4 className="text-base font-bold text-text-headline mb-4">
           {t('calculator.chartTitle')}
         </h4>
@@ -184,17 +184,17 @@ export function CalculatorSection() {
             <LineChart data={data} margin={{ top: 20, right: 20, bottom: 20, left: 10 }}>
               <defs>
                 <linearGradient id="weightGradient" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stopColor="#2563EB" stopOpacity={0.15} />
-                  <stop offset="100%" stopColor="#2563EB" stopOpacity={0.02} />
+                  <stop offset="0%" stopColor="#3B82F6" stopOpacity={0.15} />
+                  <stop offset="100%" stopColor="#3B82F6" stopOpacity={0.02} />
                 </linearGradient>
               </defs>
 
-              <CartesianGrid strokeDasharray="3 3" stroke="#E4E4E7" />
+              <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.06)" />
 
               {/* Phase background bands */}
-              <ReferenceArea x1={0} x2={14} y1={yMin} y2={yMax} fill="#2563EB" fillOpacity={0.04} />
-              <ReferenceArea x1={14} x2={30} y1={yMin} y2={yMax} fill="#2563EB" fillOpacity={0.07} />
-              <ReferenceArea x1={30} x2={90} y1={yMin} y2={yMax} fill="#2563EB" fillOpacity={0.03} />
+              <ReferenceArea x1={0} x2={14} y1={yMin} y2={yMax} fill="#3B82F6" fillOpacity={0.04} />
+              <ReferenceArea x1={14} x2={30} y1={yMin} y2={yMax} fill="#3B82F6" fillOpacity={0.07} />
+              <ReferenceArea x1={30} x2={90} y1={yMin} y2={yMax} fill="#3B82F6" fillOpacity={0.03} />
 
               {/* Vertical dashed lines at phase boundaries */}
               <ReferenceLine x={14} stroke="#A1A1AA" strokeDasharray="5 5" />
@@ -204,14 +204,14 @@ export function CalculatorSection() {
                 dataKey="day"
                 tick={{ fontSize: 12, fill: '#71717A', fontFamily: "'JetBrains Mono', monospace" }}
                 tickLine={false}
-                axisLine={{ stroke: '#E4E4E7' }}
+                axisLine={{ stroke: 'rgba(255,255,255,0.08)' }}
                 ticks={[0, 14, 30, 60, 90]}
               />
               <YAxis
                 domain={[yMin, yMax]}
                 tick={{ fontSize: 12, fill: '#71717A', fontFamily: "'JetBrains Mono', monospace" }}
                 tickLine={false}
-                axisLine={{ stroke: '#E4E4E7' }}
+                axisLine={{ stroke: 'rgba(255,255,255,0.08)' }}
                 unit=" կգ"
               />
 
@@ -220,7 +220,7 @@ export function CalculatorSection() {
               <Line
                 type="monotone"
                 dataKey="weight"
-                stroke="#2563EB"
+                stroke="#3B82F6"
                 strokeWidth={2.5}
                 dot={false}
                 activeDot={{ r: 5, fill: '#2563EB' }}
@@ -237,15 +237,15 @@ export function CalculatorSection() {
                     x={day}
                     y={point.weight}
                     r={5}
-                    fill="#2563EB"
-                    stroke="white"
+                    fill="#3B82F6"
+                    stroke="#1a1a1a"
                     strokeWidth={2}
                     label={{
                       value: `${point.weight} կգ`,
                       position: day === 0 ? 'top' : 'bottom',
                       fontSize: 11,
                       fontWeight: 600,
-                      fill: '#09090B',
+                      fill: '#F5F5F7',
                       fontFamily: "'JetBrains Mono', monospace",
                     }}
                   />
@@ -263,7 +263,7 @@ export function CalculatorSection() {
                     position: 'top',
                     fontSize: 13,
                     fontWeight: 700,
-                    fill: '#1D4ED8',
+                    fill: '#60A5FA',
                     offset: 20,
                     fontFamily: "'JetBrains Mono', monospace",
                   }}
