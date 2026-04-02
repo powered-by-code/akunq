@@ -97,6 +97,7 @@ export function ContactForm() {
             </>
           )}
         </div>
+
       </div>
     </AnimatedSection>
   );

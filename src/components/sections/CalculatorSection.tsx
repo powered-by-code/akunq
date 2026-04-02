@@ -135,13 +135,13 @@ export function CalculatorSection() {
       <div className="flex gap-2 mb-6">
         <button
           onClick={() => setGender('male')}
-          className={`px-4 py-2 rounded-lg text-sm font-medium transition-[background-color] duration-150 ${gender === 'male' ? 'bg-primary text-white' : 'bg-primary/10 text-text-body hover:bg-primary/20'}`}
+          className={`flex-1 py-2 rounded-lg text-sm font-medium transition-[background-color] duration-150 ${gender === 'male' ? 'bg-primary text-white' : 'bg-primary/10 text-text-body hover:bg-primary/20'}`}
         >
           {t('calculator.male')}
         </button>
         <button
           onClick={() => setGender('female')}
-          className={`px-4 py-2 rounded-lg text-sm font-medium transition-[background-color] duration-150 ${gender === 'female' ? 'bg-primary text-white' : 'bg-primary/10 text-text-body hover:bg-primary/20'}`}
+          className={`flex-1 py-2 rounded-lg text-sm font-medium transition-[background-color] duration-150 ${gender === 'female' ? 'bg-primary text-white' : 'bg-primary/10 text-text-body hover:bg-primary/20'}`}
         >
           {t('calculator.female')}
         </button>
