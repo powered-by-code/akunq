@@ -132,7 +132,7 @@ export function CalculatorSection() {
       </h3>
 
       {/* Gender toggle */}
-      <div className="flex gap-2 mb-6">
+      <div className="flex flex-wrap gap-2 mb-6">
         <button
           onClick={() => setGender('male')}
           className={`flex-1 py-2 rounded-lg text-sm font-medium transition-[background-color] duration-150 ${gender === 'male' ? 'bg-primary text-white' : 'bg-primary/10 text-text-body hover:bg-primary/20'}`}

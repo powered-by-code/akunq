@@ -28,7 +28,7 @@ export function FAQSection() {
           ))}
         </Accordion>
 
-        <div className="flex gap-4">
+        <div className="flex flex-wrap gap-4">
           <Button onClick={scrollToForm} size="lg" className="flex-1 bg-primary text-primary-foreground hover:bg-primary/80 px-8 py-4 font-semibold rounded-lg h-auto glow-blue hover:glow-blue-lg transition-shadow duration-300">
             {t('faq.ctaButton')}
           </Button>
