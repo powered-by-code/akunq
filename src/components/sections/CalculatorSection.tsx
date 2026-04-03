@@ -97,6 +97,7 @@ export function CalculatorSection() {
   const [weight, setWeight] = useState(DEFAULTS.weight);
   const [height, setHeight] = useState(DEFAULTS.height);
   const [age, setAge] = useState(DEFAULTS.age);
+  const isDesktop = typeof window !== 'undefined' && window.innerWidth >= 768;
 
   const tweaked = weight !== DEFAULTS.weight || height !== DEFAULTS.height || age !== DEFAULTS.age || gender !== 'male';
 
@@ -132,7 +133,7 @@ export function CalculatorSection() {
       </h3>
 
       {/* Gender toggle */}
-      <div className="flex flex-wrap gap-2 mb-6">
+      <div className="flex gap-2 mb-6 overflow-hidden">
         <button
           onClick={() => setGender('male')}
           className={`flex-1 py-2 rounded-lg text-sm font-medium transition-[background-color] duration-150 ${gender === 'male' ? 'bg-primary text-white' : 'bg-primary/10 text-text-body hover:bg-primary/20'}`}
@@ -252,8 +253,8 @@ export function CalculatorSection() {
                 );
               })}
 
-              {/* Day 30 callout badge */}
-              {data[30] && (
+              {/* Day 30 callout badge — desktop only */}
+              {isDesktop && data[30] && (
                 <ReferenceDot
                   x={30}
                   y={data[30].weight}
