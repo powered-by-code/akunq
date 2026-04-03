@@ -56,7 +56,7 @@ export function ContactForm() {
                     onChange={(e) => setName(e.target.value)}
                     onKeyDown={handleKeyDown}
                     placeholder={t('form.namePlaceholder')}
-                    autoFocus
+
                   />
                 </div>
                 <div>
