@@ -15,9 +15,9 @@ export function Navbar() {
   return (
     <nav className={`sticky top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-background/80 backdrop-blur-md border-b border-border' : 'bg-transparent'}`}>
       <div className="container mx-auto flex items-center justify-between px-4 py-4 max-w-5xl">
-        <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="flex items-center gap-2 cursor-pointer">
+        <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="flex items-center gap-2 cursor-pointer min-w-0">
           <img src="/logo.webp" alt="Ակունք" className="h-8 w-auto" />
-          <span className="text-lg tracking-tight text-text-headline font-bold" style={{ fontFamily: "'ARM HMK IMAGINESQUARE', sans-serif" }}>{t('nav.brandName')}</span>
+          <span className="text-lg tracking-tight text-text-headline font-bold truncate" style={{ fontFamily: "'ARM HMK IMAGINESQUARE', sans-serif" }}>{t('nav.brandName')}</span>
         </button>
         <Button onClick={scrollToForm} size="sm" className="bg-primary text-primary-foreground hover:bg-primary/90 font-medium rounded-md glow-blue hover:glow-blue-lg transition-shadow duration-300 md:text-[0.95rem] md:px-6 md:py-3 md:h-10">
           {t('nav.ctaButton')}

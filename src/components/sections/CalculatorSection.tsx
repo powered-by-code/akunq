@@ -124,7 +124,7 @@ export function CalculatorSection() {
   const yMax = Math.ceil(data[0].weight + 1);
 
   return (
-    <div className="mt-10 p-4 md:p-8 rounded-xl backdrop-blur-sm border border-[rgba(255,255,255,0.06)]" style={{ background: 'rgba(255,255,255,0.03)' }}>
+    <div className="mt-10 px-4 py-4 md:p-8 rounded-none md:rounded-xl backdrop-blur-sm border-y md:border border-[rgba(255,255,255,0.06)]" style={{ background: 'rgba(255,255,255,0.03)' }}>
       <span className="text-xs uppercase tracking-[0.08em] text-gradient-blue font-semibold block mb-3">
         {t('calculator.sectionTag')}
       </span>
