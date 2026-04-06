@@ -14,13 +14,17 @@ import { FAQSection } from '@/components/sections/FAQSection';
 import { ContactForm } from '@/components/sections/ContactForm';
 import { FinalCTA } from '@/components/sections/FinalCTA';
 import { Footer } from '@/components/sections/Footer';
+import { MenuSection } from '@/components/sections/MenuSection';
 
 const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-      <Hero />
+      <Hero />     
+       <MenuSection />
+      <div className="section-divider" />
+
       <div id="calculator" className="py-16 px-0 md:px-4 bg-background relative">
         <div className="md:container md:mx-auto max-w-4xl md:px-0">
           <CalculatorSection />
