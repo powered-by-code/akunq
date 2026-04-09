@@ -306,6 +306,7 @@
     "phase3Label": "Կայունացում",
     "resultText": "Կանխատեսվող կորուստը 30 օրում՝ {thirtyDayLoss} կգ · 90 օրում՝ {ninetyDayLoss} կգ",
     "male": "Արական",
-    "female": "Իգական"
+    "female": "Իգական",
+    "ctaButton": "Ամրագրել հիմա"
   }
 }

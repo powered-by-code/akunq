@@ -266,7 +266,8 @@
     "phase2Label": "Փուլ 2. Տանը (Ուղղորդված)",
     "phase3Label": "Կայունացում",
     "male": "Արական",
-    "female": "Իգական"
+    "female": "Իգական",
+    "ctaButton": "Ամրագրել տեղը"
   },
   "testimonials": {
     "sectionTag": "Կարծիքներ",

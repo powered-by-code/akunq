@@ -1,5 +1,7 @@
 import { useMemo, useState } from 'react';
 import { t } from '@/i18n/useTranslation';
+import { Button } from '@/components/ui/button';
+import { scrollToForm } from '@/lib/scrollToForm';
 import {
   LineChart,
   Line,
@@ -297,6 +299,15 @@ export function CalculatorSection() {
 
 
         {/* CTA */}
+        <div className="mt-6 text-center">
+          <Button
+            onClick={scrollToForm}
+            size="lg"
+            className="bg-primary text-primary-foreground hover:bg-primary/80 px-8 py-4 font-semibold rounded-lg h-auto glow-blue hover:glow-blue-lg transition-shadow duration-300"
+          >
+            {t('calculator.ctaButton')}
+          </Button>
+        </div>
       </div>
     </div>
   );
