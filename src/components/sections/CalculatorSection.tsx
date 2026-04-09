@@ -319,6 +319,9 @@ function SliderInput({
   step: number;
   unit?: string;
 }) {
+  const decrement = () => onChange(Math.max(min, value - step));
+  const increment = () => onChange(Math.min(max, value + step));
+
   return (
     <div>
       <div className="flex items-center justify-between mb-2">
@@ -327,15 +330,33 @@ function SliderInput({
           {value}{unit ? ` ${unit}` : ''}
         </span>
       </div>
-      <input
-        type="range"
-        min={min}
-        max={max}
-        step={step}
-        value={value}
-        onChange={(e) => onChange(Number(e.target.value))}
-        className="w-full h-2 bg-primary/15 rounded-full appearance-none cursor-pointer accent-primary"
-      />
+      <div className="flex items-center gap-2">
+        <button
+          onClick={decrement}
+          disabled={value <= min}
+          className="w-7 h-7 flex items-center justify-center rounded-md bg-primary/10 text-primary hover:bg-primary/20 disabled:opacity-30 disabled:cursor-not-allowed transition-colors text-lg font-bold leading-none flex-shrink-0"
+          aria-label={`Decrease ${label}`}
+        >
+          -
+        </button>
+        <input
+          type="range"
+          min={min}
+          max={max}
+          step={step}
+          value={value}
+          onChange={(e) => onChange(Number(e.target.value))}
+          className="flex-1 h-2 bg-primary/15 rounded-full appearance-none cursor-pointer accent-primary"
+        />
+        <button
+          onClick={increment}
+          disabled={value >= max}
+          className="w-7 h-7 flex items-center justify-center rounded-md bg-primary/10 text-primary hover:bg-primary/20 disabled:opacity-30 disabled:cursor-not-allowed transition-colors text-lg font-bold leading-none flex-shrink-0"
+          aria-label={`Increase ${label}`}
+        >
+          +
+        </button>
+      </div>
       <div className="flex justify-between text-xs text-muted-foreground font-mono-data mt-1">
         <span>{min}</span>
         <span>{max}</span>
