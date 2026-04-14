@@ -4,15 +4,30 @@ import { Button } from '@/components/ui/button';
 import { ChevronDown, Play } from 'lucide-react';
 import { Dialog, DialogContent, DialogTitle } from '@/components/ui/dialog';
 
+type FBVideoInstance = { unmute: () => void; play: () => void };
+type FBXfbmlMsg = { type: string; instance: FBVideoInstance };
+type FBType = {
+  init: (opts: { xfbml: boolean; version: string }) => void;
+  XFBML: { parse: () => void };
+  Event: {
+    subscribe: (event: string, handler: (msg: FBXfbmlMsg) => void) => void;
+    unsubscribe: (event: string, handler: (msg: FBXfbmlMsg) => void) => void;
+  };
+};
+
+declare global {
+  interface Window { FB: FBType; fbAsyncInit: () => void; }
+}
+
 export function Hero() {
   const [open, setOpen] = useState(false);
 
   // Load Facebook JS SDK once
   useEffect(() => {
-    if ((window as any).FB || document.getElementById('fb-sdk')) return;
+    if (window.FB || document.getElementById('fb-sdk')) return;
 
-    (window as any).fbAsyncInit = function () {
-      (window as any).FB.init({ xfbml: false, version: 'v18.0' });
+    window.fbAsyncInit = function () {
+      window.FB.init({ xfbml: false, version: 'v18.0' });
     };
 
     const script = document.createElement('script');
@@ -27,7 +42,7 @@ export function Hero() {
   useEffect(() => {
     if (!open) return;
 
-    const handler = (msg: any) => {
+    const handler = (msg: FBXfbmlMsg) => {
       if (msg.type === 'video') {
         msg.instance.unmute();
         msg.instance.play();
@@ -35,18 +50,16 @@ export function Hero() {
     };
 
     const tryParse = () => {
-      const FB = (window as any).FB;
-      if (!FB) { setTimeout(tryParse, 200); return; }
-      FB.Event.subscribe('xfbml.ready', handler);
-      FB.XFBML.parse();
+      if (!window.FB) { setTimeout(tryParse, 200); return; }
+      window.FB.Event.subscribe('xfbml.ready', handler);
+      window.FB.XFBML.parse();
     };
 
     const timer = setTimeout(tryParse, 150);
 
     return () => {
       clearTimeout(timer);
-      const FB = (window as any).FB;
-      if (FB) FB.Event.unsubscribe('xfbml.ready', handler);
+      if (window.FB) window.FB.Event.unsubscribe('xfbml.ready', handler);
     };
   }, [open]);
 
