@@ -5,14 +5,10 @@ export function HowItWorks() {
   const steps = tArray<{ number: string; title: string; description: string }>('howItWorks.steps');
 
   return (
-    <AnimatedSection className="py-20 px-4 bg-background relative overflow-hidden">
-      <div aria-hidden="true" className="absolute inset-0 wash-cyan pointer-events-none" />
-      <div aria-hidden="true" className="absolute inset-0 bg-grid pointer-events-none" />
-      {/* Ambient glow */}
-      <div aria-hidden="true" className="glow-orb w-[600px] h-[400px] top-[-50px] left-1/2 -translate-x-1/2 opacity-25" style={{ background: 'rgba(99,102,241,0.4)' }} />
+    <AnimatedSection className="py-24 px-4 bg-background relative overflow-hidden">
       <div className="container mx-auto max-w-5xl relative">
-        <span className="text-xs uppercase tracking-[0.08em] text-gradient-blue font-semibold block mb-3">{t('howItWorks.sectionTag')}</span>
-        <h2 className="text-3xl md:text-4xl font-bold text-gradient mb-12 max-w-[800px]">{t('howItWorks.headline')}</h2>
+        <div className="mono-label mb-4">// {t('howItWorks.sectionTag')}</div>
+        <h2 className="text-3xl md:text-4xl font-semibold text-foreground tracking-tight mb-12 max-w-[800px]">{t('howItWorks.headline')}</h2>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
           {steps.map((step) => (

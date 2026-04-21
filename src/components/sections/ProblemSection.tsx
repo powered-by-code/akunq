@@ -13,13 +13,10 @@ export function ProblemSection() {
   const situations = tArray<{ icon: string; text: string }>('problem.situations');
 
   return (
-    <AnimatedSection className="py-20 px-4 bg-background relative overflow-hidden">
-      <div aria-hidden="true" className="absolute inset-0 wash-purple pointer-events-none" />
-      {/* Ambient glow */}
-      <div aria-hidden="true" className="glow-orb w-[500px] h-[500px] top-[10%] right-[-100px] opacity-25" style={{ background: 'rgba(59,130,246,0.3)' }} />
+    <AnimatedSection className="py-24 px-4 bg-background relative overflow-hidden">
       <div className="container mx-auto max-w-5xl relative">
-        <span className="text-xs uppercase tracking-[0.08em] text-gradient-blue font-semibold block mb-3">{t('problem.sectionTag')}</span>
-        <h2 className="text-3xl md:text-4xl font-bold text-gradient mb-6 max-w-[800px]">{t('problem.headline')}</h2>
+        <div className="mono-label mb-4">// {t('problem.sectionTag')}</div>
+        <h2 className="text-3xl md:text-4xl font-semibold text-foreground tracking-tight mb-6 max-w-[800px]">{t('problem.headline')}</h2>
         <p className="text-text-body leading-[1.75] text-[1.05rem] mb-4 max-w-[680px]">{t('problem.paragraph1')}</p>
         <p className="text-text-body leading-[1.75] text-[1.05rem] mb-12 max-w-[680px]">{tHtml('problem.paragraph2')}</p>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">

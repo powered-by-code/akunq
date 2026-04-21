@@ -77,10 +77,9 @@ function CustomTooltip({ active, payload }: { active?: boolean; payload?: Array<
   if (!active || !payload?.length) return null;
   const d = payload[0].payload;
   return (
-    <div className="bg-[#1a1a1a] border border-border rounded-xl px-3 py-2 shadow-sm text-sm">
-      <p className="text-text-body">
-        Day {d.day}: <span className="font-bold font-mono-data text-text-headline">{d.weight} կգ</span>
-      </p>
+    <div className="bg-[#0f0f0f] border border-border rounded-md px-3 py-2 font-mono text-[12px]">
+      <span className="text-muted-foreground">day_{String(d.day).padStart(2, '0')} </span>
+      <span className="text-foreground tabular-nums">{d.weight} կգ</span>
     </div>
   );
 }
@@ -126,184 +125,207 @@ export function CalculatorSection() {
   const yMax = Math.ceil(data[0].weight + 1);
 
   return (
-    <div className="mt-10 px-4 py-4 md:p-8 rounded-none md:rounded-xl backdrop-blur-sm border-y md:border border-[rgba(255,255,255,0.06)]" style={{ background: 'rgba(255,255,255,0.03)' }}>
-      <span className="text-xs uppercase tracking-[0.08em] text-gradient-blue font-semibold block mb-3">
-        {t('calculator.sectionTag')}
-      </span>
-      <h3 className="text-2xl md:text-3xl font-bold text-gradient mb-4 max-w-[800px]">
+    <div className="mt-10 px-4 md:px-0">
+      <div className="mono-label mb-4">// {t('calculator.sectionTag')}</div>
+      <h3 className="text-2xl md:text-3xl font-semibold text-foreground tracking-tight mb-6 max-w-[800px]">
         {t('calculator.headline')}
       </h3>
 
-      {/* Gender toggle */}
-      <div className="flex gap-2 mb-6 overflow-hidden">
-        <button
-          onClick={() => setGender('male')}
-          className={`flex-1 py-2 rounded-lg text-sm font-medium transition-[background-color] duration-150 ${gender === 'male' ? 'bg-primary text-white' : 'bg-primary/10 text-text-body hover:bg-primary/20'}`}
-        >
-          {t('calculator.male')}
-        </button>
-        <button
-          onClick={() => setGender('female')}
-          className={`flex-1 py-2 rounded-lg text-sm font-medium transition-[background-color] duration-150 ${gender === 'female' ? 'bg-primary text-white' : 'bg-primary/10 text-text-body hover:bg-primary/20'}`}
-        >
-          {t('calculator.female')}
-        </button>
-      </div>
+      <div className="rounded-lg border border-border bg-card/40 backdrop-blur-sm overflow-hidden">
+        {/* Window chrome header */}
+        <div className="flex items-center justify-between px-4 py-2.5 border-b border-border/80 bg-white/[0.02]">
+          <div className="flex items-center gap-2">
+            <div className="flex gap-1.5">
+              <span className="w-2 h-2 rounded-full bg-[#3a3a3a]" />
+              <span className="w-2 h-2 rounded-full bg-[#3a3a3a]" />
+              <span className="w-2 h-2 rounded-full bg-[#3a3a3a]" />
+            </div>
+            <span className="mono-label ml-2">calculator.tsx</span>
+          </div>
+          <span className="mono-label text-foreground/60">90d projection</span>
+        </div>
 
-      {/* Sliders */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-        <SliderInput
-          label={t('calculator.weightLabel')}
-          value={weight}
-          onChange={setWeight}
-          {...RANGES.weight}
-          unit="կգ"
-        />
-        <SliderInput
-          label={t('calculator.heightLabel')}
-          value={height}
-          onChange={setHeight}
-          {...RANGES.height}
-          unit="սմ"
-        />
-        <SliderInput
-          label={t('calculator.ageLabel')}
-          value={age}
-          onChange={setAge}
-          {...RANGES.age}
-          unit="տ"
+        {/* Controls */}
+        <div className="px-4 md:px-6 py-5 space-y-5">
+          {/* Gender segmented control */}
+          <div>
+            <div className="mono-label mb-2">// Սեռ</div>
+            <div className="inline-flex border border-border rounded-md overflow-hidden">
+              <button
+                onClick={() => setGender('male')}
+                className={`px-4 py-1.5 text-sm font-mono transition-colors ${gender === 'male' ? 'bg-foreground text-background' : 'text-muted-foreground hover:text-foreground hover:bg-white/[0.03]'}`}
+              >
+                {t('calculator.male')}
+              </button>
+              <button
+                onClick={() => setGender('female')}
+                className={`px-4 py-1.5 text-sm font-mono transition-colors border-l border-border ${gender === 'female' ? 'bg-foreground text-background' : 'text-muted-foreground hover:text-foreground hover:bg-white/[0.03]'}`}
+              >
+                {t('calculator.female')}
+              </button>
+            </div>
+          </div>
 
-        />
-      </div>
+          {/* Sliders */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 pt-1">
+            <SliderInput
+              name="Քաշ"
+              label={t('calculator.weightLabel')}
+              value={weight}
+              onChange={setWeight}
+              {...RANGES.weight}
+              unit="կգ"
+            />
+            <SliderInput
+              name="Հասակ"
+              label={t('calculator.heightLabel')}
+              value={height}
+              onChange={setHeight}
+              {...RANGES.height}
+              unit="սմ"
+            />
+            <SliderInput
+              name="Տարիք"
+              label={t('calculator.ageLabel')}
+              value={age}
+              onChange={setAge}
+              {...RANGES.age}
+              unit="տ"
+            />
+          </div>
+        </div>
 
-      {/* Chart */}
-      <div className="py-4 md:px-6 md:py-6 md:bg-[rgba(255,255,255,0.02)] md:border md:border-[rgba(255,255,255,0.06)] md:rounded-xl">
-        <h4 className="text-base font-bold text-text-headline mb-4">
-          {t('calculator.chartTitle')}
-        </h4>
+        {/* Chart block */}
+        <div className="border-t border-border/80">
+          <div className="flex items-center justify-between px-4 md:px-6 py-2.5 border-b border-border/80 bg-white/[0.02]">
+            <span className="mono-label">{t('calculator.chartTitle')}</span>
+            <span className="mono-label text-foreground/60 tabular-nums">
+              30d <span className="text-[#60A5FA]">−{thirtyDayLoss}</span> · 90d <span className="text-[#60A5FA]">−{ninetyDayLoss}</span> կգ
+            </span>
+          </div>
 
-        <div className="w-full" style={{ minHeight: 300 }}>
-          <ResponsiveContainer width="100%" height={400}>
-            <LineChart data={data} margin={{ top: 20, right: 20, bottom: 20, left: 10 }}>
-              <defs>
-                <linearGradient id="weightGradient" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stopColor="#3B82F6" stopOpacity={0.30} />
-                  <stop offset="100%" stopColor="#3B82F6" stopOpacity={0.05} />
-                </linearGradient>
-              </defs>
+          <div className="px-2 md:px-4 pt-4 pb-2">
+            <div className="w-full" style={{ minHeight: 300 }}>
+              <ResponsiveContainer width="100%" height={380}>
+                <LineChart data={data} margin={{ top: 20, right: 20, bottom: 10, left: 10 }}>
+                  <defs>
+                    <linearGradient id="weightGradient" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stopColor="#3B82F6" stopOpacity={0.30} />
+                      <stop offset="100%" stopColor="#3B82F6" stopOpacity={0.05} />
+                    </linearGradient>
+                  </defs>
 
-              <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.10)" />
+                  <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.06)" />
 
-              {/* Phase background bands */}
-              <ReferenceArea x1={0} x2={14} y1={yMin} y2={yMax} fill="#3B82F6" fillOpacity={0.10} />
-              <ReferenceArea x1={14} x2={30} y1={yMin} y2={yMax} fill="#3B82F6" fillOpacity={0.15} />
-              <ReferenceArea x1={30} x2={90} y1={yMin} y2={yMax} fill="#3B82F6" fillOpacity={0.08} />
+                  {/* Phase background bands */}
+                  <ReferenceArea x1={0} x2={14} y1={yMin} y2={yMax} fill="#3B82F6" fillOpacity={0.08} />
+                  <ReferenceArea x1={14} x2={30} y1={yMin} y2={yMax} fill="#3B82F6" fillOpacity={0.12} />
+                  <ReferenceArea x1={30} x2={90} y1={yMin} y2={yMax} fill="#3B82F6" fillOpacity={0.05} />
 
-              {/* Vertical dashed lines at phase boundaries */}
-              <ReferenceLine x={14} stroke="#A1A1AA" strokeDasharray="5 5" />
-              <ReferenceLine x={30} stroke="#A1A1AA" strokeDasharray="5 5" />
+                  {/* Vertical dashed lines at phase boundaries */}
+                  <ReferenceLine x={14} stroke="rgba(255,255,255,0.25)" strokeDasharray="4 4" />
+                  <ReferenceLine x={30} stroke="rgba(255,255,255,0.25)" strokeDasharray="4 4" />
 
-              <XAxis
-                dataKey="day"
-                tick={{ fontSize: 12, fill: '#71717A', fontFamily: "'JetBrains Mono', monospace" }}
-                tickLine={false}
-                axisLine={{ stroke: 'rgba(255,255,255,0.08)' }}
-                ticks={[0, 14, 30, 60, 90]}
-              />
-              <YAxis
-                domain={[yMin, yMax]}
-                tick={{ fontSize: 12, fill: '#71717A', fontFamily: "'JetBrains Mono', monospace" }}
-                tickLine={false}
-                axisLine={{ stroke: 'rgba(255,255,255,0.08)' }}
-                unit=" կգ"
-              />
-
-              <Tooltip content={<CustomTooltip />} />
-
-              <Line
-                type="monotone"
-                dataKey="weight"
-                stroke="#3B82F6"
-                strokeWidth={2.5}
-                dot={false}
-                activeDot={{ r: 5, fill: '#2563EB' }}
-                fill="url(#weightGradient)"
-              />
-
-              {/* Milestone dots with labels */}
-              {MILESTONE_DAYS.map((day) => {
-                const point = data[day];
-                if (!point) return null;
-                return (
-                  <ReferenceDot
-                    key={day}
-                    x={day}
-                    y={point.weight}
-                    r={5}
-                    fill="#3B82F6"
-                    stroke="#1a1a1a"
-                    strokeWidth={2}
-                    label={{
-                      value: `${point.weight} կգ`,
-                      position: day === 0 ? 'top' : 'bottom',
-                      fontSize: 11,
-                      fontWeight: 600,
-                      fill: '#F5F5F7',
-                      fontFamily: "'JetBrains Mono', monospace",
-                    }}
+                  <XAxis
+                    dataKey="day"
+                    tick={{ fontSize: 11, fill: '#71717A', fontFamily: "'JetBrains Mono', monospace" }}
+                    tickLine={false}
+                    axisLine={{ stroke: 'rgba(255,255,255,0.08)' }}
+                    ticks={[0, 14, 30, 60, 90]}
                   />
-                );
-              })}
+                  <YAxis
+                    domain={[yMin, yMax]}
+                    tick={{ fontSize: 11, fill: '#71717A', fontFamily: "'JetBrains Mono', monospace" }}
+                    tickLine={false}
+                    axisLine={{ stroke: 'rgba(255,255,255,0.08)' }}
+                    unit=" կգ"
+                  />
 
-              {/* Day 30 callout badge — desktop only */}
-              {isDesktop && data[30] && (
-                <ReferenceDot
-                  x={30}
-                  y={data[30].weight}
-                  r={0}
-                  label={{
-                    value: `−${thirtyDayLoss} կգ`,
-                    position: 'top',
-                    fontSize: 13,
-                    fontWeight: 700,
-                    fill: '#60A5FA',
-                    offset: 20,
-                    fontFamily: "'JetBrains Mono', monospace",
-                  }}
-                />
-              )}
-            </LineChart>
-          </ResponsiveContainer>
+                  <Tooltip content={<CustomTooltip />} cursor={{ stroke: 'rgba(255,255,255,0.15)', strokeDasharray: '3 3' }} />
+
+                  <Line
+                    type="monotone"
+                    dataKey="weight"
+                    stroke="#3B82F6"
+                    strokeWidth={2}
+                    dot={false}
+                    activeDot={{ r: 4, fill: '#3B82F6', stroke: '#0a0a0a', strokeWidth: 2 }}
+                    fill="url(#weightGradient)"
+                  />
+
+                  {/* Milestone dots with labels */}
+                  {MILESTONE_DAYS.map((day) => {
+                    const point = data[day];
+                    if (!point) return null;
+                    return (
+                      <ReferenceDot
+                        key={day}
+                        x={day}
+                        y={point.weight}
+                        r={4}
+                        fill="#3B82F6"
+                        stroke="#0a0a0a"
+                        strokeWidth={2}
+                        label={{
+                          value: `${point.weight} կգ`,
+                          position: day === 0 ? 'top' : 'bottom',
+                          fontSize: 11,
+                          fontWeight: 500,
+                          fill: '#F5F5F7',
+                          fontFamily: "'JetBrains Mono', monospace",
+                        }}
+                      />
+                    );
+                  })}
+
+                  {/* Day 30 callout badge — desktop only */}
+                  {isDesktop && data[30] && (
+                    <ReferenceDot
+                      x={30}
+                      y={data[30].weight}
+                      r={0}
+                      label={{
+                        value: `−${thirtyDayLoss} կգ`,
+                        position: 'top',
+                        fontSize: 12,
+                        fontWeight: 600,
+                        fill: '#60A5FA',
+                        offset: 20,
+                        fontFamily: "'JetBrains Mono', monospace",
+                      }}
+                    />
+                  )}
+                </LineChart>
+              </ResponsiveContainer>
+            </div>
+
+            {/* Phase legend */}
+            <div className="flex flex-col sm:flex-row gap-2 sm:gap-5 mt-3 px-3 md:px-2 font-mono text-[11px]">
+              <div className="flex items-center gap-2">
+                <span className="inline-block w-2.5 h-2.5 rounded-sm bg-[#3B82F6]/15" />
+                <span className="text-muted-foreground">{t('calculator.phase1Label')} <span className="text-foreground/60">· d1–14</span></span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="inline-block w-2.5 h-2.5 rounded-sm bg-[#3B82F6]/25" />
+                <span className="text-muted-foreground">{t('calculator.phase2Label')} <span className="text-foreground/60">· d15–30</span></span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="inline-block w-2.5 h-2.5 rounded-sm bg-[#3B82F6]/10" />
+                <span className="text-muted-foreground">{t('calculator.phase3Label')} <span className="text-foreground/60">· d31–90</span></span>
+              </div>
+            </div>
+          </div>
         </div>
 
-        {/* Phase legend */}
-        <div className="flex flex-col sm:flex-row gap-2 sm:gap-6 mt-4 px-2">
-          <div className="flex items-center gap-2">
-            <span className="inline-block w-3 h-3 rounded-sm bg-primary/20" />
-            <span className="text-xs text-text-body">{t('calculator.phase1Label')} — Days 1–14</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <span className="inline-block w-3 h-3 rounded-sm bg-primary/30" />
-            <span className="text-xs text-text-body">{t('calculator.phase2Label')} — Days 15–30</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <span className="inline-block w-3 h-3 rounded-sm bg-primary/15" />
-            <span className="text-xs text-text-body">{t('calculator.phase3Label')} — Days 31–90</span>
-          </div>
-        </div>
-
-        {/* Result text */}
-        <p className="text-base font-semibold text-text-headline mt-4 text-center">
-          {resultText}
-        </p>
-
-
-        {/* CTA */}
-        <div className="mt-6 text-center">
+        {/* Result + CTA */}
+        <div className="border-t border-border/80 px-4 md:px-6 py-5">
+          <p className="text-sm md:text-base text-foreground/90 leading-relaxed mb-4">
+            {resultText}
+          </p>
           <Button
             onClick={scrollToForm}
             size="lg"
-            className="bg-primary text-primary-foreground hover:bg-primary/80 px-8 py-4 font-semibold rounded-lg h-auto glow-blue hover:glow-blue-lg transition-shadow duration-300"
+            className="bg-foreground text-background hover:bg-foreground/90 font-semibold"
           >
             {t('calculator.ctaButton')}
           </Button>
@@ -314,6 +336,7 @@ export function CalculatorSection() {
 }
 
 function SliderInput({
+  name,
   label,
   value,
   onChange,
@@ -322,6 +345,7 @@ function SliderInput({
   step,
   unit,
 }: {
+  name: string;
   label: string;
   value: number;
   onChange: (v: number) => void;
@@ -336,19 +360,19 @@ function SliderInput({
   return (
     <div>
       <div className="flex items-center justify-between mb-2">
-        <label className="text-sm font-medium text-text-headline">{label}</label>
-        <span className="text-sm font-bold font-mono-data text-primary tabular-nums">
-          {value}{unit ? ` ${unit}` : ''}
+        <span className="mono-label">{name}</span>
+        <span className="font-mono text-[13px] text-foreground tabular-nums">
+          {value}<span className="text-muted-foreground">{unit ? ` ${unit}` : ''}</span>
         </span>
       </div>
       <div className="flex items-center gap-2">
         <button
           onClick={decrement}
           disabled={value <= min}
-          className="w-7 h-7 flex items-center justify-center rounded-md bg-primary/10 text-primary hover:bg-primary/20 disabled:opacity-30 disabled:cursor-not-allowed transition-colors text-lg font-bold leading-none flex-shrink-0"
+          className="w-7 h-7 flex items-center justify-center rounded-md border border-border text-muted-foreground hover:text-foreground hover:border-foreground/30 disabled:opacity-30 disabled:cursor-not-allowed transition-colors text-base font-mono leading-none flex-shrink-0"
           aria-label={`Decrease ${label}`}
         >
-          -
+          −
         </button>
         <input
           type="range"
@@ -357,18 +381,18 @@ function SliderInput({
           step={step}
           value={value}
           onChange={(e) => onChange(Number(e.target.value))}
-          className="flex-1 h-2 bg-primary/15 rounded-full appearance-none cursor-pointer accent-primary"
+          className="flex-1 h-1 bg-white/[0.08] rounded-full appearance-none cursor-pointer accent-foreground"
         />
         <button
           onClick={increment}
           disabled={value >= max}
-          className="w-7 h-7 flex items-center justify-center rounded-md bg-primary/10 text-primary hover:bg-primary/20 disabled:opacity-30 disabled:cursor-not-allowed transition-colors text-lg font-bold leading-none flex-shrink-0"
+          className="w-7 h-7 flex items-center justify-center rounded-md border border-border text-muted-foreground hover:text-foreground hover:border-foreground/30 disabled:opacity-30 disabled:cursor-not-allowed transition-colors text-base font-mono leading-none flex-shrink-0"
           aria-label={`Increase ${label}`}
         >
           +
         </button>
       </div>
-      <div className="flex justify-between text-xs text-muted-foreground font-mono-data mt-1">
+      <div className="flex justify-between font-mono text-[10px] text-muted-foreground/70 mt-1.5 tabular-nums">
         <span>{min}</span>
         <span>{max}</span>
       </div>

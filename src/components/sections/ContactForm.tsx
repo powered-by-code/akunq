@@ -31,12 +31,9 @@ export function ContactForm() {
   };
 
   return (
-    <AnimatedSection id="contact-form" className="py-20 px-4 bg-background relative overflow-hidden">
-      <div aria-hidden="true" className="absolute inset-0 wash-purple pointer-events-none" />
-      {/* Ambient glow behind form */}
-      <div aria-hidden="true" className="glow-orb w-[500px] h-[500px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-30" style={{ background: 'rgba(59,130,246,0.25)' }} />
+    <AnimatedSection id="contact-form" className="py-24 px-4 bg-background relative overflow-hidden">
       <div className="container mx-auto max-w-md relative">
-        <div className="glass-card rounded-xl p-8 glow-blue">
+        <div className="glass-card rounded-lg p-8">
           {submitted ? (
             <div className="text-center py-8">
               <CheckCircle size={48} className="text-primary mx-auto mb-4" />

@@ -8,12 +8,10 @@ export function FAQSection() {
   const items = tArray<{ question: string; answer: string }>('faq.items');
 
   return (
-    <AnimatedSection className="py-20 px-4 bg-background relative overflow-hidden">
-      <div aria-hidden="true" className="absolute inset-0 wash-indigo pointer-events-none" />
-      <div aria-hidden="true" className="absolute inset-0 bg-grid-dots pointer-events-none" />
+    <AnimatedSection className="py-24 px-4 bg-background relative overflow-hidden">
       <div className="container mx-auto max-w-3xl relative">
-        <span className="text-xs uppercase tracking-[0.08em] text-gradient-blue font-semibold block mb-3">{t('faq.sectionTag')}</span>
-        <h2 className="text-3xl md:text-4xl font-bold text-gradient mb-12 max-w-[800px]">{t('faq.headline')}</h2>
+        <div className="mono-label mb-4">// {t('faq.sectionTag')}</div>
+        <h2 className="text-3xl md:text-4xl font-semibold text-foreground tracking-tight mb-12 max-w-[800px]">{t('faq.headline')}</h2>
 
         <Accordion type="single" collapsible className="mb-12">
           {items.map((item, i) => (
@@ -29,7 +27,7 @@ export function FAQSection() {
         </Accordion>
 
         <div className="flex gap-4 overflow-hidden">
-          <Button onClick={scrollToForm} size="lg" className="flex-1 bg-primary text-primary-foreground hover:bg-primary/80 px-8 py-4 font-semibold rounded-lg h-auto glow-blue hover:glow-blue-lg transition-shadow duration-300">
+          <Button onClick={scrollToForm} size="lg" className="flex-1 bg-foreground text-background hover:bg-foreground/90 px-8 py-4 font-semibold rounded-lg h-auto">
             {t('faq.ctaButton')}
           </Button>
           <Button

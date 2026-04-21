@@ -11,14 +11,10 @@ export function GuaranteeSection() {
   };
 
   return (
-    <AnimatedSection className="py-20 px-4 bg-background relative overflow-hidden">
-      <div aria-hidden="true" className="absolute inset-0 wash-emerald pointer-events-none" />
-      <div aria-hidden="true" className="absolute inset-0 bg-grid-dots pointer-events-none" />
-      {/* Ambient green/blue glow */}
-      <div aria-hidden="true" className="glow-orb w-[450px] h-[450px] top-[20%] right-[-80px] opacity-20" style={{ background: 'rgba(74,222,128,0.3)' }} />
+    <AnimatedSection className="py-24 px-4 bg-background relative overflow-hidden">
       <div className="container mx-auto max-w-5xl relative">
-        <span className="text-xs uppercase tracking-[0.08em] text-gradient-blue font-semibold block mb-3">{t('guarantee.sectionTag')}</span>
-        <h2 className="text-3xl md:text-4xl font-bold text-gradient mb-12 max-w-[800px]">{t('guarantee.headline')}</h2>
+        <div className="mono-label mb-4">// {t('guarantee.sectionTag')}</div>
+        <h2 className="text-3xl md:text-4xl font-semibold text-foreground tracking-tight mb-12 max-w-[800px]">{t('guarantee.headline')}</h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
           {guarantees.map((g, i) => (
