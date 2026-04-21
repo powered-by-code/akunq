@@ -146,28 +146,29 @@ export function CalculatorSection() {
         </div>
 
         {/* Controls */}
-        <div className="px-4 md:px-6 py-5 space-y-5">
-          {/* Gender segmented control */}
-          <div>
-            <div className="mono-label mb-2">// Սեռ</div>
-            <div className="inline-flex border border-border rounded-md overflow-hidden">
-              <button
-                onClick={() => setGender('male')}
-                className={`px-4 py-1.5 text-sm font-mono transition-colors ${gender === 'male' ? 'bg-foreground text-background' : 'text-muted-foreground hover:text-foreground hover:bg-white/[0.03]'}`}
-              >
-                {t('calculator.male')}
-              </button>
-              <button
-                onClick={() => setGender('female')}
-                className={`px-4 py-1.5 text-sm font-mono transition-colors border-l border-border ${gender === 'female' ? 'bg-foreground text-background' : 'text-muted-foreground hover:text-foreground hover:bg-white/[0.03]'}`}
-              >
-                {t('calculator.female')}
-              </button>
+        <div className="px-4 md:px-6 py-5">
+          <div className="grid grid-cols-1 md:grid-cols-[auto_1fr_1fr_1fr] gap-5 md:gap-6 items-start">
+            {/* Gender segmented control */}
+            <div>
+              <div className="mb-1">
+                <span className="mono-label">Սեռ</span>
+              </div>
+              <div className="inline-flex border border-border rounded-md overflow-hidden">
+                <button
+                  onClick={() => setGender('male')}
+                  className={`px-3 py-1 text-sm font-mono transition-colors ${gender === 'male' ? 'bg-foreground text-background' : 'text-muted-foreground hover:text-foreground hover:bg-white/[0.03]'}`}
+                >
+                  {t('calculator.male')}
+                </button>
+                <button
+                  onClick={() => setGender('female')}
+                  className={`px-3 py-1 text-sm font-mono transition-colors border-l border-border ${gender === 'female' ? 'bg-foreground text-background' : 'text-muted-foreground hover:text-foreground hover:bg-white/[0.03]'}`}
+                >
+                  {t('calculator.female')}
+                </button>
+              </div>
             </div>
-          </div>
 
-          {/* Sliders */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 pt-1">
             <SliderInput
               name="Քաշ"
               label={t('calculator.weightLabel')}
