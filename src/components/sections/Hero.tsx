@@ -148,7 +148,7 @@ export function Hero() {
             </button>
 
             <div className="mt-4 lg:mt-0 lg:absolute lg:-bottom-4 lg:-right-10 lg:w-[62%] lg:z-10 lg:shadow-[0_30px_60px_-10px_rgba(0,0,0,0.9)] lg:rounded-lg">
-              <DashboardMock compact />
+              {/* <DashboardMock compact /> */}
             </div>
           </div>
         </div>
