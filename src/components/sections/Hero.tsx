@@ -132,7 +132,6 @@ export function Hero() {
                   </div>
                   <span className="mono-label ml-2">intro.mp4</span>
                 </div>
-                <span className="mono-label">0:90</span>
               </div>
               <div className="relative">
                 <img
