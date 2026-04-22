@@ -109,14 +109,16 @@ export function CalculatorSection() {
   );
 
   const thirtyDayLoss = data.length > 30 ? round2(data[0].weight - data[30].weight) : 0;
+  const ninetyDayLoss = data.length > 90 ? round2(data[0].weight - data[90].weight) : 0;
 
   // Persist calculator state so the contact form can include it
-  if (tweaked) {
-    localStorage.setItem('calc', JSON.stringify({ gender, weight, height, age, thirtyDayLoss }));
-  } else {
-    localStorage.removeItem('calc');
-  }
-  const ninetyDayLoss = data.length > 90 ? round2(data[0].weight - data[90].weight) : 0;
+  useEffect(() => {
+    if (tweaked) {
+      localStorage.setItem('calc', JSON.stringify({ gender, weight, height, age, thirtyDayLoss }));
+    } else {
+      localStorage.removeItem('calc');
+    }
+  }, [tweaked, gender, weight, height, age, thirtyDayLoss]);
 
   // Send calc stats to Telegram once per session after 5s of idle
   useEffect(() => {
