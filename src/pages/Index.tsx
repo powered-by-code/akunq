@@ -27,11 +27,11 @@ const Index = () => {
       <div className="section-divider" />
       <SystemSection />
       <div className="section-divider" />
-      <ValueStack />
-      <div className="section-divider" />
       <FounderStory />
       <div className="section-divider" />
       <HowItWorks />
+      <div className="section-divider" />
+      <ValueStack />
       <div className="section-divider" />
       <GuaranteeSection />
       <div className="section-divider" />
