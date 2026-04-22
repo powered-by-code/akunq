@@ -26,15 +26,15 @@ export function FAQSection() {
           ))}
         </Accordion>
 
-        <div className="flex gap-4 overflow-hidden">
-          <Button onClick={scrollToForm} size="lg" className="flex-1 bg-foreground text-background hover:bg-foreground/90 px-8 py-4 font-semibold rounded-lg h-auto">
+        <div className="flex flex-col md:flex-row gap-3 md:gap-4">
+          <Button onClick={scrollToForm} size="lg" className="md:flex-1 bg-foreground text-background hover:bg-foreground/90 px-8 py-4 font-semibold rounded-lg h-auto">
             {t('faq.ctaButton')}
           </Button>
           <Button
             variant="outline"
             size="lg"
             onClick={() => document.getElementById('calculator')?.scrollIntoView({ behavior: 'smooth' })}
-            className="flex-1 px-8 py-4 font-semibold rounded-lg h-auto"
+            className="md:flex-1 px-8 py-4 font-semibold rounded-lg h-auto"
           >
             {t('form.calcButton')}
           </Button>

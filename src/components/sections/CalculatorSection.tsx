@@ -1,7 +1,8 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { t } from '@/i18n/useTranslation';
 import { Button } from '@/components/ui/button';
 import { scrollToForm } from '@/lib/scrollToForm';
+import { notifyCalc } from '@/utils/notify';
 import {
   LineChart,
   Line,
@@ -116,6 +117,17 @@ export function CalculatorSection() {
     localStorage.removeItem('calc');
   }
   const ninetyDayLoss = data.length > 90 ? round2(data[0].weight - data[90].weight) : 0;
+
+  // Send calc stats to Telegram once per session after 5s of idle
+  useEffect(() => {
+    if (!tweaked) return;
+    if (sessionStorage.getItem('calc_sent')) return;
+    const timer = setTimeout(() => {
+      sessionStorage.setItem('calc_sent', '1');
+      notifyCalc({ gender, weight, height, age, thirtyDayLoss, ninetyDayLoss });
+    }, 5000);
+    return () => clearTimeout(timer);
+  }, [tweaked, gender, weight, height, age, thirtyDayLoss, ninetyDayLoss]);
 
   const resultText = t('calculator.resultText')
     .replace('{thirtyDayLoss}', String(thirtyDayLoss))
