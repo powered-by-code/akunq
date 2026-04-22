@@ -33,7 +33,7 @@ export function SystemSection() {
                 </div>
 
                 <div className="border-t border-border/80 px-5 py-4">
-                  <div className="mono-label mb-2">// metrics</div>
+                  <div className="mono-label mb-2">// stack</div>
                   <ul className="space-y-1.5">
                     {metrics.map((m, j) => (
                       <li key={j} className="flex items-start gap-2 text-sm text-foreground/80 font-mono text-[13px]">
