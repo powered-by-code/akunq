@@ -3,6 +3,7 @@ import { Hero } from '@/components/sections/Hero';
 import { CalculatorSection } from '@/components/sections/CalculatorSection';
 import { ProblemSection } from '@/components/sections/ProblemSection';
 import { SystemSection } from '@/components/sections/SystemSection';
+import { ValueStack } from '@/components/sections/ValueStack';
 import { FounderStory } from '@/components/sections/FounderStory';
 import { HowItWorks } from '@/components/sections/HowItWorks';
 import { GuaranteeSection } from '@/components/sections/GuaranteeSection';
@@ -25,6 +26,8 @@ const Index = () => {
       <ProblemSection />
       <div className="section-divider" />
       <SystemSection />
+      <div className="section-divider" />
+      <ValueStack />
       <div className="section-divider" />
       <FounderStory />
       <div className="section-divider" />
