@@ -95,7 +95,7 @@ export function Hero() {
                 <ShieldCheck className="w-3 h-3 text-[#34D399]" strokeWidth={2.5} />
                 <span className="mono-label text-[#34D399]/90 text-[10px]">guarantee</span>
               </span>
-              <span className="text-[13px] font-medium text-foreground leading-none">{t('hero.guarantee')}</span>
+              <span className="text-[13px] font-medium text-foreground leading-[1.5] text-center">{t('hero.guarantee')}</span>
               <span className="text-[#34D399]/80 text-sm leading-none transition-transform group-hover:translate-x-0.5">→</span>
             </button>
 
