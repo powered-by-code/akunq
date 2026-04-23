@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { t, tHtml } from '@/i18n/useTranslation';
 import { Button } from '@/components/ui/button';
-import { Play } from 'lucide-react';
+import { Play, ShieldCheck } from 'lucide-react';
 import { Dialog, DialogContent, DialogTitle } from '@/components/ui/dialog';
 import { DashboardMock } from '@/components/DashboardMock';
 
@@ -85,6 +85,20 @@ export function Hero() {
       <div className="relative mx-auto max-w-6xl">
         <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_1fr] gap-8 lg:gap-x-16 items-center">
           <div className="order-2 lg:order-1">
+            <button
+              type="button"
+              onClick={() => document.getElementById('guarantee-section')?.scrollIntoView({ behavior: 'smooth' })}
+              className="group inline-flex items-center gap-2.5 rounded-full border border-[#34D399]/30 bg-[#0A2618]/60 backdrop-blur-sm pl-2 pr-4 py-1.5 mb-6 hover:border-[#34D399]/60 hover:bg-[#0A2618]/80 transition-colors shadow-[0_0_24px_-4px_rgba(52,211,153,0.25)]"
+            >
+              <span className="flex items-center gap-1.5 rounded-full bg-[#34D399]/15 border border-[#34D399]/30 px-2 py-0.5">
+             
+                <ShieldCheck className="w-3 h-3 text-[#34D399]" strokeWidth={2.5} />
+                <span className="mono-label text-[#34D399]/90 text-[10px]">guarantee</span>
+              </span>
+              <span className="text-[13px] font-medium text-foreground leading-none">{t('hero.guarantee')}</span>
+              <span className="text-[#34D399]/80 text-sm leading-none transition-transform group-hover:translate-x-0.5">→</span>
+            </button>
+
             <h1 className="font-semibold tracking-tight text-foreground leading-[1.05] text-[clamp(2.5rem,5vw,4.25rem)] max-w-[720px] mb-6">
               {t('hero.headline')}
             </h1>

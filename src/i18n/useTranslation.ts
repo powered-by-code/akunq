@@ -1,14 +1,11 @@
 import { createElement, Fragment } from 'react';
 import type { ReactNode } from 'react';
-import campTranslation from './translation.json';
 import devTranslation from './translation.dev.json';
 
 type NestedObject = { [key: string]: unknown };
 
 // Add new variants here — route and import are all you need.
-const variants: [string, NestedObject][] = [
-  ['camp', campTranslation as NestedObject],
-];
+const variants: [string, NestedObject][] = [];
 
 const defaultData = devTranslation as NestedObject;
 
