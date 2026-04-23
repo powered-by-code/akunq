@@ -131,9 +131,7 @@ export function CalculatorSection() {
     return () => clearTimeout(timer);
   }, [tweaked, gender, weight, height, age, thirtyDayLoss, ninetyDayLoss]);
 
-  const resultText = t('calculator.resultText')
-    .replace('{thirtyDayLoss}', String(thirtyDayLoss))
-    .replace('{ninetyDayLoss}', String(ninetyDayLoss));
+  const resultParts = t('calculator.resultText').split(/(\{thirtyDayLoss\}|\{ninetyDayLoss\})/);
 
   const yMin = Math.floor(data[data.length - 1].weight - 2);
   const yMax = Math.ceil(data[0].weight + 1);
@@ -333,9 +331,25 @@ export function CalculatorSection() {
         </div>
 
         {/* Result + CTA */}
-        <div className="border-t border-border/80 px-4 md:px-6 py-5">
-          <p className="text-sm md:text-base text-foreground/90 leading-relaxed mb-4">
-            {resultText}
+        <div className="border-t border-border/80 px-4 md:px-6 py-6">
+          <p className="text-base md:text-lg text-muted-foreground leading-[1.8] mb-5">
+            {resultParts.map((p, i) => {
+              if (p === '{thirtyDayLoss}') {
+                return (
+                  <span key={i} className="font-mono font-semibold text-2xl md:text-3xl text-foreground tabular-nums mx-0.5">
+                    {thirtyDayLoss}
+                  </span>
+                );
+              }
+              if (p === '{ninetyDayLoss}') {
+                return (
+                  <span key={i} className="font-mono font-semibold text-2xl md:text-3xl text-[#60A5FA] tabular-nums mx-0.5">
+                    {ninetyDayLoss}
+                  </span>
+                );
+              }
+              return <span key={i}>{p}</span>;
+            })}
           </p>
           <Button
             onClick={scrollToForm}
